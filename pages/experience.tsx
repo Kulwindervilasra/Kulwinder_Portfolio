@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import styles from "../styles/Experience.module.css";
@@ -169,7 +168,15 @@ const Experience = () => {
               <div className={styles.timelineContent}>
                 <div className={styles.timelineHeader}>
                   <div className={styles.companyLogo}>
-                    <img src={exp.logo} alt={exp.company} />
+                    <img 
+                      src={exp.logo} 
+                      alt={exp.company}
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.onerror = null;
+                        target.src = "https://cdn-icons-png.flaticon.com/512/9068/9068883.png";
+                      }}
+                    />
                   </div>
                   <div>
                     <h2>{exp.title}</h2>
@@ -220,7 +227,7 @@ const Experience = () => {
             ))}
           </div>
         </motion.div>
-        
+
         <CertificateShowcase />
       </main>
 
