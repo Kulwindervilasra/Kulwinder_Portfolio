@@ -1,10 +1,12 @@
-
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { motion } from "framer-motion";
 import NavBar from "../components/NavBar";
+import SkillsRadar from "../components/SkillsRadar";
+import ProjectCarousel from "../components/ProjectCarousel";
+import ServiceSection from "../components/ServiceSection";
 
 // Data imported from the provided information
 const personalInfo = {
@@ -205,7 +207,7 @@ const Home = () => {
     console.log("Form Data Submitted: ", formData);
     setFormSubmitted(true);
     setFormData({ name: "", email: "", message: "" });
-    
+
     // Reset form submitted status after 3 seconds
     setTimeout(() => {
       setFormSubmitted(false);
@@ -267,6 +269,12 @@ const Home = () => {
           </motion.div>
         </section>
 
+        {/* Project Carousel */}
+        <ProjectCarousel />
+
+        {/* Service Section */}
+        <ServiceSection />
+
         {/* Skills Section */}
         <section id="skills" className={styles.section}>
           <div className={styles.sectionHeader}>
@@ -274,69 +282,22 @@ const Home = () => {
             <p>Specialized in cutting-edge blockchain technologies and frameworks</p>
           </div>
 
-          <div className={styles.skillsGrid}>
-            {blockchainSkills.map((skill, index) => (
-              <motion.div 
-                key={index} 
-                className={styles.skillCard}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <div className={styles.skillIcon}>
-                  <img src={skill.logo} alt={skill.title} width={40} height={40} />
-                </div>
-                <h3>{skill.title}</h3>
-              </motion.div>
-            ))}
-          </div>
+          <SkillsRadar skills={blockchainSkills} title="Blockchain Skills"/>
+
 
           <div className={styles.sectionHeader} style={{ marginTop: '4rem' }}>
             <h2>Development Skills</h2>
             <p>Full-stack development expertise for enterprise-grade applications</p>
           </div>
 
-          <div className={styles.skillsGrid}>
-            {developerSkills.map((skill, index) => (
-              <motion.div 
-                key={index} 
-                className={styles.skillCard}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <div className={styles.skillIcon}>
-                  <img src={skill.logo} alt={skill.title} width={40} height={40} />
-                </div>
-                <h3>{skill.title}</h3>
-              </motion.div>
-            ))}
-          </div>
+          <SkillsRadar skills={developerSkills} title="Development Skills"/>
 
           <div className={styles.sectionHeader} style={{ marginTop: '4rem' }}>
             <h2>Additional Skills</h2>
             <p>Complementary technologies and tools for robust solutions</p>
           </div>
 
-          <div className={styles.skillsGrid}>
-            {additionalSkills.map((skill, index) => (
-              <motion.div 
-                key={index} 
-                className={styles.skillCard}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <div className={styles.skillIcon}>
-                  <img src={skill.logo} alt={skill.title} width={40} height={40} />
-                </div>
-                <h3>{skill.title}</h3>
-              </motion.div>
-            ))}
-          </div>
+          <SkillsRadar skills={additionalSkills} title="Additional Skills"/>
         </section>
 
         {/* Experience Preview */}
@@ -383,7 +344,7 @@ const Home = () => {
             <h2>Client Testimonials</h2>
             <p>What clients and colleagues say about working with me</p>
           </div>
-          
+
           <div className={styles.testimonialSlider}>
             <div className={styles.testimonialCard}>
               <div className={styles.testimonialContent}>
@@ -397,7 +358,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className={styles.testimonialCard}>
               <div className={styles.testimonialContent}>
                 <p>"Working with Kulwinder transformed our blockchain infrastructure. His deep understanding of both frontend and backend technologies helped us create a seamless user experience while maintaining robust security standards."</p>
@@ -410,7 +371,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className={styles.testimonialCard}>
               <div className={styles.testimonialContent}>
                 <p>"Kulwinder's leadership skills are exceptional. He guided our development team through challenging projects with clear communication and technical excellence. His blockchain expertise significantly accelerated our time to market."</p>
@@ -483,7 +444,7 @@ const Home = () => {
                       placeholder="John Doe"
                     />
                   </div>
-                  
+
                   <div className={styles.formGroup}>
                     <label htmlFor="email">Your Email</label>
                     <input 
@@ -496,7 +457,7 @@ const Home = () => {
                       placeholder="johndoe@example.com"
                     />
                   </div>
-                  
+
                   <div className={styles.formGroup}>
                     <label htmlFor="message">Your Message</label>
                     <textarea 
@@ -509,7 +470,7 @@ const Home = () => {
                       placeholder="I'd like to discuss a blockchain project..."
                     ></textarea>
                   </div>
-                  
+
                   <button type="submit" className={styles.submitButton}>Send Message</button>
                 </>
               )}

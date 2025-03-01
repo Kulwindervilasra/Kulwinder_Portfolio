@@ -4,6 +4,7 @@ import Head from "next/head";
 import styles from "../styles/Experience.module.css";
 import { motion } from "framer-motion";
 import NavBar from "../components/NavBar";
+import CertificateShowcase from "../components/CertificateShowcase";
 
 const Experience = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -140,6 +141,19 @@ const Experience = () => {
             My career journey and professional growth in blockchain development
             and full-stack engineering.
           </p>
+          <a 
+            href="https://drive.google.com/file/d/1NrxK5tlN9CtiLf3NNe75mOGrl4_0RlXT/view" 
+            target="_blank"
+            rel="noopener noreferrer" 
+            className={styles.downloadResumeBtn}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Download Resume
+          </a>
         </motion.div>
 
         <div className={styles.timeline}>
@@ -206,6 +220,8 @@ const Experience = () => {
             ))}
           </div>
         </motion.div>
+        
+        <CertificateShowcase />
       </main>
 
       <footer className={styles.footer}>
