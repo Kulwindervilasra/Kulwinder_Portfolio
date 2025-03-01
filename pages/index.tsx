@@ -297,6 +297,12 @@ const Home = () => {
     { name: "Tendermint", level: 85 },
     { name: "Polkadot", level: 88 },
     { name: "IPFS", level: 90 },
+    { name: "Hardhat", level: 88 },
+    { name: "Truffle", level: 85 },
+    { name: "Chainlink", level: 83 },
+    { name: "DeFi Protocols", level: 87 },
+    { name: "NFT Development", level: 89 },
+    { name: "Layer 2 Solutions", level: 82 },
   ];
 
   const frontendSkills = [
@@ -309,6 +315,12 @@ const Home = () => {
     { name: "Material UI", level: 90 },
     { name: "React Native", level: 85 },
     { name: "Vue.js", level: 80 },
+    { name: "Angular", level: 78 },
+    { name: "SASS/SCSS", level: 88 },
+    { name: "Bootstrap", level: 90 },
+    { name: "Responsive Design", level: 94 },
+    { name: "Web Accessibility", level: 85 },
+    { name: "Progressive Web Apps", level: 83 },
   ];
 
   const backendSkills = [
@@ -321,6 +333,12 @@ const Home = () => {
     { name: "REST APIs", level: 95 },
     { name: "WebSockets", level: 88 },
     { name: "Microservices", level: 90 },
+    { name: "FastAPI", level: 82 },
+    { name: "Go", level: 78 },
+    { name: "Java", level: 75 },
+    { name: "Spring Boot", level: 74 },
+    { name: "PHP", level: 77 },
+    { name: "Laravel", level: 76 },
   ];
 
   const databaseSkills = [
@@ -332,6 +350,13 @@ const Home = () => {
     { name: "Elasticsearch", level: 80 },
     { name: "DynamoDB", level: 82 },
     { name: "Cassandra", level: 78 },
+    { name: "SQLite", level: 87 },
+    { name: "Neo4j", level: 75 },
+    { name: "GraphDB", level: 76 },
+    { name: "ORM Tools", level: 89 },
+    { name: "Database Design", level: 90 },
+    { name: "Data Modeling", level: 88 },
+    { name: "SQL Query Optimization", level: 85 },
   ];
 
   const devOpsSkills = [
@@ -343,6 +368,13 @@ const Home = () => {
     { name: "Jenkins", level: 85 },
     { name: "Terraform", level: 80 },
     { name: "Nginx", level: 88 },
+    { name: "GCP", level: 80 },
+    { name: "Azure", level: 78 },
+    { name: "Ansible", level: 75 },
+    { name: "GitLab CI", level: 86 },
+    { name: "Cloud Architecture", level: 85 },
+    { name: "Infrastructure as Code", level: 84 },
+    { name: "Monitoring Tools", level: 82 },
   ];
 
   const testingSkills = [
@@ -353,6 +385,14 @@ const Home = () => {
     { name: "React Testing Library", level: 90 },
     { name: "Postman", level: 95 },
     { name: "Pytest", level: 85 },
+    { name: "JUnit", level: 78 },
+    { name: "TDD", level: 87 },
+    { name: "BDD", level: 84 },
+    { name: "Integration Testing", level: 88 },
+    { name: "E2E Testing", level: 86 },
+    { name: "Performance Testing", level: 82 },
+    { name: "Manual Testing", level: 90 },
+    { name: "Test Automation", level: 89 },
   ];
 
   const buildToolsSkills = [
@@ -363,6 +403,68 @@ const Home = () => {
     { name: "npm/yarn", level: 95 },
     { name: "Gulp", level: 82 },
     { name: "Grunt", level: 80 },
+    { name: "Parcel", level: 78 },
+    { name: "ESLint", level: 92 },
+    { name: "Prettier", level: 93 },
+    { name: "Husky", level: 85 },
+    { name: "TypeScript Compiler", level: 87 },
+    { name: "Make", level: 75 },
+    { name: "Maven", level: 76 },
+    { name: "Gradle", level: 74 },
+  ];
+
+  const cloudServicesSkills = [
+    { name: "AWS Lambda", level: 88 },
+    { name: "EC2", level: 86 },
+    { name: "S3", level: 92 },
+    { name: "RDS", level: 85 },
+    { name: "CloudFront", level: 83 },
+    { name: "Google Cloud Functions", level: 80 },
+    { name: "Firebase Functions", level: 85 },
+    { name: "Azure Functions", level: 78 },
+    { name: "Heroku", level: 90 },
+    { name: "Vercel", level: 92 },
+    { name: "Netlify", level: 91 },
+    { name: "Digital Ocean", level: 84 },
+    { name: "AWS Amplify", level: 82 },
+    { name: "AWS AppSync", level: 80 },
+    { name: "AWS CDK", level: 78 },
+  ];
+
+  const messagingSkills = [
+    { name: "RabbitMQ", level: 88 },
+    { name: "Kafka", level: 85 },
+    { name: "NATS", level: 80 },
+    { name: "Redis Pub/Sub", level: 87 },
+    { name: "AWS SQS", level: 82 },
+    { name: "AWS SNS", level: 81 },
+    { name: "gRPC", level: 83 },
+    { name: "WebSockets", level: 90 },
+    { name: "Socket.io", level: 89 },
+    { name: "GraphQL Subscriptions", level: 84 },
+    { name: "Event-Driven Architecture", level: 86 },
+    { name: "Message Queues", level: 87 },
+    { name: "Event Sourcing", level: 80 },
+    { name: "CQRS", level: 79 },
+    { name: "Pub/Sub Patterns", level: 85 },
+  ];
+
+  const aiMlSkills = [
+    { name: "Machine Learning", level: 78 },
+    { name: "TensorFlow", level: 75 },
+    { name: "PyTorch", level: 73 },
+    { name: "OpenAI API", level: 85 },
+    { name: "AI Integration", level: 82 },
+    { name: "Natural Language Processing", level: 80 },
+    { name: "Chatbot Development", level: 83 },
+    { name: "Data Science", level: 77 },
+    { name: "Predictive Analytics", level: 76 },
+    { name: "Computer Vision", level: 72 },
+    { name: "Neural Networks", level: 74 },
+    { name: "LLM Fine Tuning", level: 77 },
+    { name: "Recommendation Systems", level: 75 },
+    { name: "AI Ethics", level: 82 },
+    { name: "AI Deployment", level: 78 },
   ];
 
   const additionalSkills = [
@@ -374,6 +476,13 @@ const Home = () => {
     { name: "Security Best Practices", level: 88 },
     { name: "Project Management", level: 92 },
     { name: "Technical Writing", level: 85 },
+    { name: "System Architecture", level: 87 },
+    { name: "Mentoring", level: 93 },
+    { name: "Code Reviews", level: 94 },
+    { name: "SEO Optimization", level: 83 },
+    { name: "Analytics Integration", level: 84 },
+    { name: "Public Speaking", level: 82 },
+    { name: "Problem Solving", level: 95 },
   ];
 
   useEffect(() => {
@@ -789,6 +898,84 @@ const Home = () => {
           />
 
           <div className={styles.sectionHeader} style={{ marginTop: "2rem" }}>
+            <h3>Cloud Services</h3>
+            <p>Expertise in serverless and cloud platforms</p>
+          </div>
+
+          <SkillsGrid
+            skills={cloudServicesSkills}
+            logoUrls={{
+              "AWS Lambda": "https://symbols.getvecta.com/stencil_98/3_aws-lambda.68cb43f88e.svg",
+              "EC2": "https://symbols.getvecta.com/stencil_4/8_aws-ec2.a6524b9687.svg",
+              "S3": "https://symbols.getvecta.com/stencil_4/1_aws-s3.86ebde61f5.svg",
+              "RDS": "https://symbols.getvecta.com/stencil_7/36_aws-rds.dacbe6bc21.svg",
+              "CloudFront": "https://symbols.getvecta.com/stencil_7/17_aws-cloudfront.53c4da6a94.svg",
+              "Google Cloud Functions": "https://www.gstatic.com/devrel-devsite/prod/vbd4700e58d826f0eab371eadc20e0e343567df356800794a2feac16fd0ee9bca/cloud/images/cloud-functions-icon.svg",
+              "Firebase Functions": "https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_96dp.png",
+              "Azure Functions": "https://azurecomcdn.azureedge.net/cvt-1e062bfe6f4cb8dd5c4dc0957dd9016ac4224956d4d3e4848eb157700829f0b/images/page/products/functions/functions.svg",
+              "Heroku": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Heroku_logo.svg",
+              "Vercel": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Vercel_logo_black.svg",
+              "Netlify": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Netlify_logo.svg",
+              "Digital Ocean": "https://upload.wikimedia.org/wikipedia/commons/f/ff/DigitalOcean_logo.svg",
+              "AWS Amplify": "https://docs.amplify.aws/assets/logo-dark.svg",
+              "AWS AppSync": "https://symbols.getvecta.com/stencil_7/6_aws-appsync.87921e3cbc.svg",
+              "AWS CDK": "https://symbols.getvecta.com/stencil_11/6_aws-cloud-development-kit.3dca8daaad.svg",
+            }}
+          />
+
+          <div className={styles.sectionHeader} style={{ marginTop: "2rem" }}>
+            <h3>Messaging & Real-time Systems</h3>
+            <p>Experience with message brokers and event-driven architecture</p>
+          </div>
+
+          <SkillsGrid
+            skills={messagingSkills}
+            logoUrls={{
+              "RabbitMQ": "https://www.vectorlogo.zone/logos/rabbitmq/rabbitmq-icon.svg",
+              "Kafka": "https://upload.wikimedia.org/wikipedia/commons/0/05/Apache_kafka.svg",
+              "NATS": "https://avatars.githubusercontent.com/u/3441858?s=200&v=4",
+              "Redis Pub/Sub": "https://upload.wikimedia.org/wikipedia/en/6/6b/Redis_Logo.svg",
+              "AWS SQS": "https://symbols.getvecta.com/stencil_4/10_aws-sqs.5e4fddd812.svg",
+              "AWS SNS": "https://symbols.getvecta.com/stencil_9/2_aws-sns.3def01e127.svg",
+              "gRPC": "https://grpc.io/img/logos/grpc-icon-color.png",
+              "WebSockets": "https://cdn-icons-png.flaticon.com/512/6119/6119533.png",
+              "Socket.io": "https://upload.wikimedia.org/wikipedia/commons/9/96/Socket-io.svg",
+              "GraphQL Subscriptions": "https://upload.wikimedia.org/wikipedia/commons/1/17/GraphQL_Logo.svg",
+              "Event-Driven Architecture": "https://cdn-icons-png.flaticon.com/512/2232/2232688.png",
+              "Message Queues": "https://cdn-icons-png.flaticon.com/512/7213/7213441.png",
+              "Event Sourcing": "https://cdn-icons-png.flaticon.com/512/6119/6119533.png",
+              "CQRS": "https://cdn-icons-png.flaticon.com/512/7213/7213411.png",
+              "Pub/Sub Patterns": "https://cdn-icons-png.flaticon.com/512/7213/7213419.png",
+            }}
+          />
+
+          <div className={styles.sectionHeader} style={{ marginTop: "2rem" }}>
+            <h3>AI & Machine Learning</h3>
+            <p>Integration and implementation of AI technologies</p>
+          </div>
+
+          <SkillsGrid
+            skills={aiMlSkills}
+            logoUrls={{
+              "Machine Learning": "https://cdn-icons-png.flaticon.com/512/2920/2920083.png",
+              "TensorFlow": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg",
+              "PyTorch": "https://upload.wikimedia.org/wikipedia/commons/1/10/PyTorch_logo_icon.svg",
+              "OpenAI API": "https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg",
+              "AI Integration": "https://cdn-icons-png.flaticon.com/512/2103/2103619.png",
+              "Natural Language Processing": "https://cdn-icons-png.flaticon.com/512/3649/3649460.png",
+              "Chatbot Development": "https://cdn-icons-png.flaticon.com/512/1693/1693746.png",
+              "Data Science": "https://cdn-icons-png.flaticon.com/512/5968/5968389.png",
+              "Predictive Analytics": "https://cdn-icons-png.flaticon.com/512/2091/2091704.png",
+              "Computer Vision": "https://cdn-icons-png.flaticon.com/512/2920/2920349.png",
+              "Neural Networks": "https://cdn-icons-png.flaticon.com/512/2103/2103832.png",
+              "LLM Fine Tuning": "https://cdn-icons-png.flaticon.com/512/2103/2103665.png",
+              "Recommendation Systems": "https://cdn-icons-png.flaticon.com/512/7513/7513041.png",
+              "AI Ethics": "https://cdn-icons-png.flaticon.com/512/2090/2090688.png",
+              "AI Deployment": "https://cdn-icons-png.flaticon.com/512/7078/7078279.png",
+            }}
+          />
+
+          <div className={styles.sectionHeader} style={{ marginTop: "2rem" }}>
             <h3>Professional Skills</h3>
             <p>Additional expertise and soft skills</p>
           </div>
@@ -796,22 +983,21 @@ const Home = () => {
           <SkillsGrid
             skills={additionalSkills}
             logoUrls={{
-              "Agile/Scrum":
-                "https://cdn-icons-png.flaticon.com/512/2620/2620865.png",
-              "Git/GitHub":
-                "https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg",
-              "Team Leadership":
-                "https://cdn-icons-png.flaticon.com/512/1651/1651203.png",
-              "UI/UX Design":
-                "https://cdn-icons-png.flaticon.com/512/5065/5065880.png",
-              "Performance Optimization":
-                "https://cdn-icons-png.flaticon.com/512/1447/1447163.png",
-              "Security Best Practices":
-                "https://cdn-icons-png.flaticon.com/512/2335/2335353.png",
-              "Project Management":
-                "https://cdn-icons-png.flaticon.com/512/3281/3281307.png",
-              "Technical Writing":
-                "https://cdn-icons-png.flaticon.com/512/4336/4336037.png",
+              "Agile/Scrum": "https://cdn-icons-png.flaticon.com/512/2620/2620865.png",
+              "Git/GitHub": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg",
+              "Team Leadership": "https://cdn-icons-png.flaticon.com/512/1651/1651203.png",
+              "UI/UX Design": "https://cdn-icons-png.flaticon.com/512/5065/5065880.png",
+              "Performance Optimization": "https://cdn-icons-png.flaticon.com/512/1447/1447163.png",
+              "Security Best Practices": "https://cdn-icons-png.flaticon.com/512/2335/2335353.png",
+              "Project Management": "https://cdn-icons-png.flaticon.com/512/3281/3281307.png",
+              "Technical Writing": "https://cdn-icons-png.flaticon.com/512/4336/4336037.png",
+              "System Architecture": "https://cdn-icons-png.flaticon.com/512/9387/9387696.png",
+              "Mentoring": "https://cdn-icons-png.flaticon.com/512/1651/1651648.png",
+              "Code Reviews": "https://cdn-icons-png.flaticon.com/512/3953/3953226.png",
+              "SEO Optimization": "https://cdn-icons-png.flaticon.com/512/1968/1968666.png",
+              "Analytics Integration": "https://cdn-icons-png.flaticon.com/512/6598/6598519.png",
+              "Public Speaking": "https://cdn-icons-png.flaticon.com/512/1652/1652222.png",
+              "Problem Solving": "https://cdn-icons-png.flaticon.com/512/3406/3406226.png",
             }}
           />
         </section>
