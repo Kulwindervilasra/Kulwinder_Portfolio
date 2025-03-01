@@ -3,7 +3,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "../styles/NavBar.module.css";
-// import ThemeToggle from "./ThemeToggle";
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -44,8 +43,16 @@ const NavBar = () => {
           >
             Blog
           </Link>
-          <a href="/#contact">Contact</a>
-          {/* Removed ThemeToggle component */}
+          <Link
+            href="/#contact"
+            className={router.pathname === "/#contact" ? styles.active : ""}
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
+            Contact
+          </Link>
         </nav>
         <button
           className={styles.mobileMenuToggle}
