@@ -9,6 +9,7 @@ import ServiceSection from "../components/ServiceSection";
 import GitHubProjects from "../components/GitHubProjects";
 import CareerTimeline from "../components/CareerTimeline";
 import FAQ from "../components/FAQ";
+import Link from "next/link";
 
 // Data imported from the provided information
 const personalInfo = {
@@ -194,7 +195,7 @@ const experiences = [
     company: "Self-employed",
     location: "Remote",
     period: "Jan 2025 - Present",
-    logo: "./images/freelance.png",
+    logo: "/images/freelance.png",
     description: [
       "Providing end-to-end development services for clients worldwide, specializing in blockchain and full-stack solutions.",
       "Designing and developing custom web applications using modern JavaScript frameworks like React, Next.js, and Node.js.",
@@ -220,7 +221,7 @@ const experiences = [
     company: "Antier Solutions Pvt Ltd",
     location: "Mohali, Punjab",
     period: "December 2020 - July 2024",
-    logo: "./images/antier.png",
+    logo: "/images/antier.png",
     description: [
       "Led a team of 20+ developers to build and deploy blockchain-based solutions aligned with business and technical goals.",
       "Architected and delivered decentralized applications (dApps) using Ethereum, Substrate, Cosmos SDK, and Tendermint frameworks.",
@@ -244,7 +245,7 @@ const experiences = [
     company: "Innow8 Apps Pvt Ltd",
     location: "Mohali, Punjab",
     period: "February 2019 - December 2020",
-    logo: "./images/innow8.jpeg",
+    logo: "/images/innow8.jpeg",
     description: [
       "Delivered 10+ blockchain-focused mobile and web projects, from requirements gathering to deployment.",
       "Developed scalable web applications using React.js, Node.js and MongoDB, increasing user engagement by 30% and reducing server response time by 25%.",
@@ -264,7 +265,7 @@ const experiences = [
     company: "eNest Technologies Pvt Ltd",
     location: "Mohali, Punjab",
     period: "January 2018 - September 2018",
-    logo: "./images/enest.svg",
+    logo: "/images/enest.svg",
     description: [
       "Prioritized and efficiently completed project tasks, contributing to the successful delivery of multiple projects.",
       "Coordinated cross-departmental efforts, ensuring seamless execution and timely delivery of milestones.",
@@ -531,30 +532,30 @@ const Home = () => {
             <h2 className={styles.title}>{personalInfo.occupation}</h2>
 
             <div className={styles.ctaContainer}>
-              <a href="#contact" className={styles.primaryButton}>
+              <Link href="#contact" className={styles.primaryButton}>
                 Hire Me
-              </a>
-              <a href="/projects" className={styles.secondaryButton}>
+              </Link>
+              <Link href="/projects" className={styles.secondaryButton}>
                 View Projects
-              </a>
+              </Link>
             </div>
 
             <div className={styles.quickContact}>
               {contactMethods.slice(0, 4).map((contact, index) => (
-                <a
+                <Link
                   key={index}
                   href={contact.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.contactIcon}
                 >
-                  <img
+                  <Image
                     src={contact.logo}
                     alt={contact.title}
                     width={28}
                     height={28}
                   />
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -588,7 +589,7 @@ const Home = () => {
           <div className={styles.projectsGrid}>
             <div className={styles.projectCard}>
               <div className={styles.projectImage}>
-                <img src="./images/fire.png" alt="5ireChain Network" />
+                <Image height={"100"} width={"100"} src="/images/fire.png" alt="5ireChain Network" />
               </div>
               <div className={styles.projectContent}>
                 <h3>5ireChain Network</h3>
@@ -610,20 +611,21 @@ const Home = () => {
                     </span>
                   ))}
                 </div>
-                <a
+                <Link
                   href="https://5ire.org/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.viewButton}
                 >
                   View Project
-                </a>
+                </Link>
               </div>
             </div>
 
             <div className={styles.projectCard}>
               <div className={styles.projectImage}>
-                <img
+                <Image
+                  height={"100"} width={"100"}
                   src="https://www.zest.ai/wp-content/themes/zest/images/Zest--logo.png"
                   alt="Zest AI"
                 />
@@ -649,20 +651,21 @@ const Home = () => {
                     </span>
                   ))}
                 </div>
-                <a
+                <Link
                   href="https://zest.ai/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.viewButton}
                 >
                   View Project
-                </a>
+                </Link>
               </div>
             </div>
 
             <div className={styles.projectCard}>
               <div className={styles.projectImage}>
-                <img
+                <Image
+                  height={"100"} width={"100"}
                   src="https://saitachain.com/saitachainlogo.png"
                   alt="SaitaChain"
                 />
@@ -688,14 +691,14 @@ const Home = () => {
                     </span>
                   ))}
                 </div>
-                <a
+                <Link
                   href="https://saitachain.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.viewButton}
                 >
                   View Project
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -1047,9 +1050,9 @@ const Home = () => {
               7+ years of industry experience working with cutting-edge
               technologies
             </p>
-            <a href="/experience" className={styles.viewMoreButton}>
+            <Link href="/experience" className={styles.viewMoreButton}>
               View Full Experience
-            </a>
+            </Link>
           </div>
 
           <div className={styles.experienceCards}>
@@ -1057,11 +1060,11 @@ const Home = () => {
               <div key={index} className={styles.experienceCard}>
                 <div className={styles.expLogoPlaceholder}>
                   {exp.logo ? (
-                    <img
+                    <Image
+                      height={"100"} width={"100"}
                       src={
-                        exp.logo.startsWith("/")
-                          ? "/company-placeholder.png"
-                          : exp.logo
+
+                        exp.logo
                       }
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
@@ -1093,14 +1096,15 @@ const Home = () => {
             <div className={styles.testimonialCard}>
               <div className={styles.testimonialContent}>
                 <p>
-                  "Kulwinder delivered exceptional results for our DeFi project.
+                  &quot;Kulwinder delivered exceptional results for our DeFi project.
                   His technical expertise and ability to solve complex
                   blockchain challenges made him an invaluable asset to our
-                  team. Would definitely work with him again!"
+                  team. Would definitely work with him again!&quot;
                 </p>
               </div>
               <div className={styles.testimonialAuthor}>
-                <img
+                <Image
+                  height={"100"} width={"100"}
                   src="https://randomuser.me/api/portraits/men/32.jpg"
                   alt="Client"
                 />
@@ -1114,14 +1118,15 @@ const Home = () => {
             <div className={styles.testimonialCard}>
               <div className={styles.testimonialContent}>
                 <p>
-                  "Working with Kulwinder transformed our blockchain
+                  &quot;Working with Kulwinder transformed our blockchain
                   infrastructure. His deep understanding of both frontend and
                   backend technologies helped us create a seamless user
-                  experience while maintaining robust security standards."
+                  experience while maintaining robust security standards.&quot;
                 </p>
               </div>
               <div className={styles.testimonialAuthor}>
-                <img
+                <Image
+                  height={"100"} width={"100"}
                   src="https://randomuser.me/api/portraits/women/44.jpg"
                   alt="Client"
                 />
@@ -1135,14 +1140,15 @@ const Home = () => {
             <div className={styles.testimonialCard}>
               <div className={styles.testimonialContent}>
                 <p>
-                  "Kulwinder's leadership skills are exceptional. He guided our
+                  &quot;Kulwinder&rsquo;s leadership skills are exceptional. He guided our
                   development team through challenging projects with clear
                   communication and technical excellence. His blockchain
-                  expertise significantly accelerated our time to market."
+                  expertise significantly accelerated our time to market.&quot;
                 </p>
               </div>
               <div className={styles.testimonialAuthor}>
-                <img
+                <Image
+                  height={"100"} width={"100"}
                   src="https://randomuser.me/api/portraits/men/62.jpg"
                   alt="Client"
                 />
@@ -1169,19 +1175,19 @@ const Home = () => {
           <div className={styles.ctaContent}>
             <h2>Ready to build your next blockchain project?</h2>
             <p>
-              Let's collaborate to create innovative and secure blockchain
+              Let&rsquo;s collaborate to create innovative and secure blockchain
               solutions
             </p>
-            <a href="#contact" className={styles.ctaButton}>
+            <Link href="#contact" className={styles.ctaButton}>
               Get in Touch
-            </a>
+            </Link>
           </div>
         </section>
 
         {/* Contact Form Section */}
         <section id="contact" className={styles.contactFormSection}>
           <div className={styles.contactFormHeader}>
-            <h2>Let's Connect</h2>
+            <h2>Let&rsquo;s Connect</h2>
             <p>
               Have a project in mind or want to explore collaboration
               opportunities? Send me a message!
@@ -1249,7 +1255,7 @@ const Home = () => {
 
           <div className={styles.contactMethodsGrid}>
             {contactMethods.map((contact, index) => (
-              <a
+              <Link
                 key={index}
                 href={contact.link}
                 target="_blank"
@@ -1257,7 +1263,7 @@ const Home = () => {
                 className={styles.contactMethod}
               >
                 <div className={styles.contactMethodIcon}>
-                  <img
+                  <Image
                     src={contact.logo}
                     alt={contact.title}
                     width={32}
@@ -1268,7 +1274,7 @@ const Home = () => {
                   <h3>{contact.title}</h3>
                   <p>{contact.desc}</p>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </section>

@@ -4,6 +4,7 @@ import styles from "../styles/Experience.module.css";
 import { motion } from "framer-motion";
 import NavBar from "../components/NavBar";
 import CertificateShowcase from "../components/CertificateShowcase";
+import Image from "next/image";
 
 const Experience = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,7 +19,7 @@ const Experience = () => {
       company: "Self-employed",
       location: "Remote",
       period: "Jan 2025 - Present",
-      logo: "./images/freelance.png",
+      logo: "/images/freelance.png",
       description: [
         "Providing end-to-end development services for clients worldwide, specializing in blockchain and full-stack solutions.",
         "Designing and developing custom web applications using modern JavaScript frameworks like React, Next.js, and Node.js.",
@@ -44,7 +45,7 @@ const Experience = () => {
       company: "Alphanet Corp",
       location: "Mohali, Punjab",
       period: "September 2024 - Jan 2025",
-      logo: "./images/alpha_net_logo.jpeg",
+      logo: "/images/alpha_net_logo.jpeg",
       description: [
         "Developed and deployed microservices for Zest AI applications, scaling to handle 50,000+ credit score requests daily using Node.js and Redis.",
         "Implemented Redis-based caching strategy, reducing server costs by 30% and improving API response time by 25%.",
@@ -65,7 +66,7 @@ const Experience = () => {
       company: "Antier Solutions Pvt Ltd",
       location: "Mohali, Punjab",
       period: "December 2020 - July 2024",
-      logo: "./images/antier.png",
+      logo: "/images/antier.png",
       description: [
         "Led a team of 20+ developers to build and deploy blockchain-based solutions aligned with business and technical goals.",
         "Architected and delivered decentralized applications (dApps) using Ethereum, Substrate, Cosmos SDK, and Tendermint frameworks.",
@@ -89,7 +90,7 @@ const Experience = () => {
       company: "Innow8 Apps Pvt Ltd",
       location: "Mohali, Punjab",
       period: "February 2019 - December 2020",
-      logo: "./images/innow8.jpeg",
+      logo: "/images/innow8.jpeg",
       description: [
         "Delivered 10+ blockchain-focused mobile and web projects, from requirements gathering to deployment.",
         "Developed scalable web applications using React.js, Node.js and MongoDB, increasing user engagement by 30% and reducing server response time by 25%.",
@@ -109,7 +110,7 @@ const Experience = () => {
       company: "eNest Technologies Pvt Ltd",
       location: "Mohali, Punjab",
       period: "January 2018 - September 2018",
-      logo: "./images/enest.svg",
+      logo: "/images/enest.svg",
       description: [
         "Prioritized and efficiently completed project tasks, contributing to the successful delivery of multiple projects.",
         "Coordinated cross-departmental efforts, ensuring seamless execution and timely delivery of milestones.",
@@ -204,7 +205,8 @@ const Experience = () => {
               <div className={styles.timelineContent}>
                 <div className={styles.timelineHeader}>
                   <div className={styles.companyLogo}>
-                    <img
+                    <Image
+                      height={"100"} width={"100"}
                       src={exp.logo}
                       alt={exp.company}
                       onError={(e) => {

@@ -3,6 +3,8 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import styles from "../styles/Projects.module.css";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import Image from "next/image";
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -313,16 +315,16 @@ const Projects = () => {
 
       <header className={styles.header}>
         <div className={styles.headerContent}>
-          <a href="/" className={styles.logo}>
+          <Link href="/" className={styles.logo}>
             KS
-          </a>
+          </Link>
           <nav className={styles.nav}>
-            <a href="/">Home</a>
-            <a href="/experience">Experience</a>
-            <a href="/projects" className={styles.active}>
+            <Link href="/">Home</Link>
+            <Link href="/experience">Experience</Link>
+            <Link href="/projects" className={styles.active}>
               Projects
-            </a>
-            <a href="/#contact">Contact</a>
+            </Link>
+            <Link href="/#contact">Contact</Link>
           </nav>
         </div>
       </header>
@@ -370,7 +372,7 @@ const Projects = () => {
             >
               <div className={styles.projectHeader}>
                 <div className={styles.projectLogo}>
-                  <img src={project.logo} alt={project.title} />
+                  <Image height={"100"} width={"100"} src={project.logo} alt={project.title} />
                 </div>
                 <h2>{project.title}</h2>
               </div>
@@ -386,14 +388,14 @@ const Projects = () => {
               </div>
 
               <div className={styles.projectActions}>
-                <a
+                <Link
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.viewProjectButton}
                 >
                   View Project
-                </a>
+                </Link>
                 <button
                   className={styles.detailsButton}
                   onClick={() => window.open(project.link, "_blank")}
@@ -426,9 +428,9 @@ const Projects = () => {
               With 7+ years of experience in blockchain development, I can help
               bring your vision to life
             </p>
-            <a href="/#contact" className={styles.hireButton}>
+            <Link href="/#contact" className={styles.hireButton}>
               Contact Me
-            </a>
+            </Link>
           </div>
         </div>
       </main>

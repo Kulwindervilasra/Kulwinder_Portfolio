@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import styles from '../styles/CertificateShowcase.module.css';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 interface Certificate {
   title: string;
@@ -13,7 +14,7 @@ interface Certificate {
 
 const CertificateShowcase = () => {
   const [activeCard, setActiveCard] = useState<number | null>(null);
-  
+
   const certificates: Certificate[] = [
     {
       title: "Advanced Blockchain Development",
@@ -37,14 +38,14 @@ const CertificateShowcase = () => {
       credential: "BTA7429361"
     }
   ];
-  
+
   return (
     <div className={styles.certificatesContainer}>
       <h2 className={styles.sectionTitle}>Certificates & Credentials</h2>
-      
+
       <div className={styles.certificatesGrid}>
         {certificates.map((cert, index) => (
-          <motion.div 
+          <motion.div
             key={index}
             className={`${styles.certificateCard} ${activeCard === index ? styles.active : ''}`}
             onClick={() => setActiveCard(activeCard === index ? null : index)}
@@ -56,7 +57,7 @@ const CertificateShowcase = () => {
           >
             <div className={styles.certificateFront}>
               <div className={styles.certificateIcon}>
-                <img src={cert.image} alt={cert.title} />
+                <Image height={"100"} width={"100"} src={cert.image} alt={cert.title} />
               </div>
               <h3>{cert.title}</h3>
               <p className={styles.issuer}>{cert.issuer}</p>
@@ -70,7 +71,7 @@ const CertificateShowcase = () => {
                 </svg>
               </div>
             </div>
-            
+
             <div className={styles.certificateBack}>
               <h3>{cert.title}</h3>
               <div className={styles.credentialDetails}>

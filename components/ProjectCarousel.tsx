@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "../styles/ProjectCarousel.module.css";
+import Image from "next/image";
 
 interface Project {
   id: number;
@@ -16,7 +17,7 @@ const ProjectCarousel = ({ projects = [] }: { projects?: Project[] }) => {
 
   useEffect(() => {
     if (projects.length === 0) return;
-    
+
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
     }, 5000);
@@ -30,7 +31,7 @@ const ProjectCarousel = ({ projects = [] }: { projects?: Project[] }) => {
 
   const handlePrevClick = () => {
     if (projects.length === 0) return;
-    
+
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? projects.length - 1 : prevIndex - 1,
     );
@@ -38,7 +39,7 @@ const ProjectCarousel = ({ projects = [] }: { projects?: Project[] }) => {
 
   const handleNextClick = () => {
     if (projects.length === 0) return;
-    
+
     setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
   };
 
@@ -83,7 +84,8 @@ const ProjectCarousel = ({ projects = [] }: { projects?: Project[] }) => {
             <div key={project.id || index} className={styles.carouselSlide}>
               <div className={styles.projectCard}>
                 <div className={styles.projectImageContainer}>
-                  <img
+                  <Image
+                    height={"100"} width={"100"}
                     src={project.image}
                     alt={project.title}
                     className={styles.projectImage}
@@ -99,10 +101,10 @@ const ProjectCarousel = ({ projects = [] }: { projects?: Project[] }) => {
                       </span>
                     ))}
                   </div>
-                  <a 
-                    href={project.link} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={styles.viewButton}
                   >
                     View Project

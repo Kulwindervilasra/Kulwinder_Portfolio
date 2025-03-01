@@ -1,6 +1,7 @@
 
 import React from 'react';
 import styles from '../styles/SkillsGrid.module.css';
+import Image from 'next/image';
 
 interface Skill {
   name: string;
@@ -26,7 +27,7 @@ const SkillsGrid = ({ skills, title, logoUrls = {} }: SkillsGridProps) => {
     "Java": "https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg",
     "C++": "https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg",
     "PHP": "https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg",
-    
+
     // Frontend
     "React.js": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
     "Next.js": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg",
@@ -39,7 +40,7 @@ const SkillsGrid = ({ skills, title, logoUrls = {} }: SkillsGridProps) => {
     "React Native": "https://d33wubrfki0l68.cloudfront.net/554c3b0e09cf167f0281fda839a5433f2040b349/ecfc9/img/header_logo.svg",
     "SASS": "https://upload.wikimedia.org/wikipedia/commons/9/96/Sass_Logo_Color.svg",
     "Bootstrap": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg",
-    
+
     // Backend
     "Node.js": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg",
     "Express.js": "https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png",
@@ -49,7 +50,7 @@ const SkillsGrid = ({ skills, title, logoUrls = {} }: SkillsGridProps) => {
     "FastAPI": "https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png",
     "Spring Boot": "https://upload.wikimedia.org/wikipedia/commons/4/44/Spring_Framework_Logo_2018.svg",
     "Laravel": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg",
-    
+
     // Databases
     "MongoDB": "https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg",
     "PostgreSQL": "https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg",
@@ -61,7 +62,7 @@ const SkillsGrid = ({ skills, title, logoUrls = {} }: SkillsGridProps) => {
     "Cassandra": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Cassandra_logo.svg",
     "SQLite": "https://upload.wikimedia.org/wikipedia/commons/3/38/SQLite370.svg",
     "Neo4j": "https://dist.neo4j.com/wp-content/uploads/20210423072428/neo4j-logo-2020-1.svg",
-    
+
     // Blockchain
     "Ethereum": "https://upload.wikimedia.org/wikipedia/commons/0/05/Ethereum_logo_2014.svg",
     "Solidity": "https://upload.wikimedia.org/wikipedia/commons/9/98/Solidity_logo.svg",
@@ -75,7 +76,7 @@ const SkillsGrid = ({ skills, title, logoUrls = {} }: SkillsGridProps) => {
     "Hardhat": "https://seeklogo.com/images/H/hardhat-logo-888739EBB4-seeklogo.com.png",
     "Truffle": "https://seeklogo.com/images/T/truffle-logo-2DC7EBABF2-seeklogo.com.png",
     "Chainlink": "https://cryptologos.cc/logos/chainlink-link-logo.png",
-    
+
     // DevOps & Cloud
     "Docker": "https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png",
     "Kubernetes": "https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg",
@@ -89,7 +90,7 @@ const SkillsGrid = ({ skills, title, logoUrls = {} }: SkillsGridProps) => {
     "Ansible": "https://upload.wikimedia.org/wikipedia/commons/2/24/Ansible_logo.svg",
     "Nginx": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Nginx_logo.svg",
     "CI/CD": "https://cdn-icons-png.flaticon.com/512/6133/6133886.png",
-    
+
     // Testing
     "Jest": "https://cdn.freebiesupply.com/logos/large/2x/jest-logo-png-transparent.png",
     "Mocha": "https://upload.wikimedia.org/wikipedia/commons/d/de/Mocha_logo.svg",
@@ -100,7 +101,7 @@ const SkillsGrid = ({ skills, title, logoUrls = {} }: SkillsGridProps) => {
     "Pytest": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Pytest_logo.svg",
     "JUnit": "https://avatars.githubusercontent.com/u/874086?s=200&v=4",
     "Testing": "https://cdn-icons-png.flaticon.com/512/2232/2232009.png",
-    
+
     // Build Tools
     "Webpack": "https://raw.githubusercontent.com/webpack/media/master/logo/icon-square-big.png",
     "Babel": "https://upload.wikimedia.org/wikipedia/commons/0/02/Babel_Logo.svg",
@@ -110,14 +111,14 @@ const SkillsGrid = ({ skills, title, logoUrls = {} }: SkillsGridProps) => {
     "Gulp": "https://upload.wikimedia.org/wikipedia/commons/7/72/Gulp.js_Logo.svg",
     "Grunt": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Grunt-logo.svg",
     "Parcel": "https://parceljs.org/avatar.b1be591d.avif",
-    
+
     // APIs & Data
     "GraphQL": "https://upload.wikimedia.org/wikipedia/commons/1/17/GraphQL_Logo.svg",
     "REST APIs": "https://cdn-icons-png.flaticon.com/512/2165/2165004.png",
     "gRPC": "https://grpc.io/img/logos/grpc-icon-color.png",
     "WebSockets": "https://cdn-icons-png.flaticon.com/512/6119/6119533.png",
     "Microservices": "https://cdn-icons-png.flaticon.com/512/7213/7213411.png",
-    
+
     // Other
     "Agile/Scrum": "https://cdn-icons-png.flaticon.com/512/2620/2620865.png",
     "Git/GitHub": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg",
@@ -161,14 +162,14 @@ const SkillsGrid = ({ skills, title, logoUrls = {} }: SkillsGridProps) => {
           <div key={index} className={styles.skillCard}>
             <div className={styles.skillHeader}>
               <div className={styles.skillLogo}>
-                <img src={skill.logo || getLogoUrl(skill.name)} alt={skill.name} />
+                <Image height={"100"} width={"100"} src={skill.logo || getLogoUrl(skill.name)} alt={skill.name} />
               </div>
               <h4 className={styles.skillName}>{skill.name}</h4>
             </div>
             <div className={styles.skillProgressContainer}>
-              <div 
-                className={styles.skillProgress} 
-                style={{ 
+              <div
+                className={styles.skillProgress}
+                style={{
                   width: `${skill.level}%`,
                   background: `linear-gradient(90deg, ${getSkillLevelColor(skill.level)} 0%, ${getSkillLevelColor(skill.level)}99 100%)`
                 }}

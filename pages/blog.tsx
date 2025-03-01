@@ -5,6 +5,7 @@ import Link from "next/link";
 import styles from "../styles/Blog.module.css";
 import { motion } from "framer-motion";
 import NavBar from "../components/NavBar";
+import Image from "next/image";
 
 const Blog = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -102,7 +103,7 @@ const Blog = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               <div className={styles.blogImageContainer}>
-                <img src={post.image} alt={post.title} className={styles.blogImage} />
+                <Image height={"100"} width={"100"} src={post.image} alt={post.title} className={styles.blogImage} />
                 <span className={styles.category}>{post.category}</span>
               </div>
               <div className={styles.blogContent}>
