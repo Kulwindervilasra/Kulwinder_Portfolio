@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import Head from "next/head";
-import Link from "next/link";
+import { useRouter } from "next/router";
 import styles from "../styles/Projects.module.css";
 import { motion } from "framer-motion";
 
@@ -22,12 +22,21 @@ const Projects = () => {
 
   const projects = [
     {
+      title: "Zest AI",
+      category: "web",
+      image: "https://www.zest.ai/wp-content/themes/zest/images/Zest--logo.png",
+      logo: "https://www.zest.ai/wp-content/themes/zest/images/Zest--logo.png",
+      link: "https://zest.ai/",
+      description: "Built backend systems for AI-driven credit underwriting using Node.js, integrating machine learning models to automate loan workflows. Implemented Redis-based caching strategy, reducing server costs by 30% and improving API response time by 25%. Designed a scalable microservices architecture that reduced system latency by 20%.",
+      technologies: ["Node.js", "Redis", "Microservices", "RabbitMQ", "Docker", "AI/ML"]
+    },
+    {
       title: "5ireChain Network",
       category: "blockchain",
       image: "https://5ire.org/static/media/logo-dark.9a0588a2.svg",
       logo: "https://cryptologos.cc/logos/5irechain-5ire-logo.png",
       link: "https://5ire.org/",
-      description: "Led the development of a Substrate-based Nominated Proof-of-Stake (NPOS) blockchain with native token support and integrated applications. Implemented sustainable consensus mechanisms that reduced carbon footprint by 15%. Designed and built the validator node architecture and block explorer with real-time network statistics.",
+      description: "Created a Substrate-based NPOS blockchain with native token support and applications like IDEs and Wallet extensions. Achieved a reduction in carbon footprint by 15% through eco-friendly infrastructure. Designed and built the validator node architecture and block explorer with real-time network statistics.",
       technologies: ["Substrate", "Polkadot", "Rust", "Web3.js", "React", "WASM"]
     },
     {
@@ -36,7 +45,7 @@ const Projects = () => {
       image: "https://saitachain.com/saitachainlogo.png",
       logo: "https://saitachain.com/saitachainlogo.png",
       link: "https://saitachain.com/",
-      description: "Architected decentralized applications for a scalable Layer 0 blockchain ecosystem, including Validator/Nominator apps and a decentralized exchange (DEX). Implemented cross-chain bridges enabling interoperability with Ethereum, Binance Smart Chain, and Polygon. Optimized smart contracts to reduce gas fees by 22%, resulting in more cost-effective transactions.",
+      description: "Implemented decentralized apps for the scalable Layer 0 blockchain ecosystem, including Validator/Nominator apps and a decentralized exchange (DEX). Developed cross-chain bridges enabling interoperability with Ethereum, Binance Smart Chain, and Polygon. Optimized smart contracts to reduce gas fees by 22%.",
       technologies: ["Layer 0", "Blockchain", "DApps", "DEX", "Solidity", "Cross-Chain"]
     },
     {
@@ -103,12 +112,12 @@ const Projects = () => {
       technologies: ["React Native", "Solana", "Mobile", "Crypto", "JavaScript", "SPL Tokens"]
     },
     {
-      title: "Agencia RXE",
+      title: "BWB Exchange",
       category: "exchange",
-      image: "https://agenciarxe.com/wp-content/uploads/2023/09/logo-1.svg",
-      logo: "https://agenciarxe.com/wp-content/uploads/2023/09/logo-1.svg",
-      link: "https://agenciarxe.com/",
-      description: "Architected a high-performance cryptocurrency exchange platform handling $50M+ in daily trading volume. Implemented a matching engine capable of processing 100,000+ orders per second with sub-millisecond latency. Designed robust security systems including cold storage solutions, multi-factor authentication, and real-time fraud detection algorithms that prevented multiple attempted attacks.",
+      image: "https://cdn-icons-png.flaticon.com/512/6119/6119641.png",
+      logo: "https://cdn-icons-png.flaticon.com/512/6119/6119641.png",
+      link: "https://github.com/kulwindervilasra/",
+      description: "Developed a cryptocurrency exchange supporting P2P and margin trading, reducing transaction processing time by 35%. Implemented a matching engine capable of processing 100,000+ orders per second with sub-millisecond latency. Designed robust security systems including cold storage solutions, multi-factor authentication, and real-time fraud detection algorithms.",
       technologies: ["Exchange", "Trading API", "Node.js", "Security", "WebSockets", "Redis"]
     },
     {
@@ -172,14 +181,12 @@ const Projects = () => {
 
       <header className={styles.header}>
         <div className={styles.headerContent}>
-          <Link href="/">
-            <a className={styles.logo}>KS</a>
-          </Link>
+          <a href="/" className={styles.logo}>KS</a>
           <nav className={styles.nav}>
-            <Link href="/"><a>Home</a></Link>
-            <Link href="/experience"><a>Experience</a></Link>
-            <Link href="/projects"><a className={styles.active}>Projects</a></Link>
-            <Link href="/#contact"><a>Contact</a></Link>
+            <a href="/">Home</a>
+            <a href="/experience">Experience</a>
+            <a href="/projects" className={styles.active}>Projects</a>
+            <a href="/#contact">Contact</a>
           </nav>
         </div>
       </header>

@@ -92,77 +92,68 @@
 .pageHeader p {
   font-size: 1.2rem;
   color: #a9a9c8;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
-/* Timeline */
+/* Timeline Layout */
 .timeline {
   position: relative;
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 1000px;
+  margin: 0 auto 6rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(82, 92, 221, 0.7), rgba(156, 63, 228, 0.5), rgba(82, 92, 221, 0.2));
+  z-index: 1;
 }
 
 .timelineItem {
-  display: flex;
-  margin-bottom: 5rem;
-}
-
-.timelineConnector {
   position: relative;
-  width: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.timelineDot {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: linear-gradient(45deg, #525cdd, #9c3fe4);
-  z-index: 2;
-}
-
-.timelineLine {
-  position: absolute;
-  top: 20px;
-  width: 2px;
-  height: calc(100% + 5rem);
-  background: rgba(255, 255, 255, 0.1);
+  margin-bottom: 4rem;
+  width: 100%;
 }
 
 .timelineContent {
-  flex: 1;
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 16px;
-  padding: 30px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .timelineContent:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
 .timelineHeader {
   display: flex;
-  align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
+  gap: 20px;
 }
 
 .companyLogo {
   width: 60px;
   height: 60px;
-  border-radius: 10px;
   background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 20px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .companyLogo img {
@@ -171,59 +162,127 @@
   object-fit: contain;
 }
 
-.timelineDetails {
-  flex: 1;
+.timelineContent h2 {
+  font-size: 1.5rem;
+  margin: 0 0 0.3rem;
+  background: linear-gradient(to right, #f1f1f3, #a9a9c8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.timelineDetails h2 {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin: 0 0 5px;
-  color: #f1f1f3;
-}
-
-.timelineDetails h3 {
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin: 0 0 5px;
+.timelineContent h3 {
+  font-size: 1.2rem;
+  margin: 0 0 0.3rem;
   color: #a9a9c8;
+  font-weight: 500;
+}
+
+.location {
+  color: #6b6b83;
+  font-size: 1rem;
 }
 
 .period {
-  font-size: 0.9rem;
-  color: #6b6b83;
-}
-
-.description {
-  font-size: 1rem;
-  color: #a9a9c8;
-  line-height: 1.6;
-  margin-bottom: 20px;
+  color: #6b6fc5;
+  font-size: 0.95rem;
+  font-weight: 500;
 }
 
 .responsibilities {
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: 10px;
-  padding: 20px;
-}
-
-.responsibilities h4 {
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0 0 15px;
-  color: #f1f1f3;
-}
-
-.responsibilities ul {
-  margin: 0;
-  padding: 0 0 0 20px;
+  padding-left: 1.2rem;
+  margin: 1.5rem 0;
 }
 
 .responsibilities li {
-  font-size: 0.95rem;
-  color: #a9a9c8;
-  margin-bottom: 10px;
+  margin-bottom: 0.8rem;
+  color: #d5d5e9;
   line-height: 1.5;
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 1.5rem;
+}
+
+.techBadge {
+  background: rgba(82, 92, 221, 0.1);
+  color: #a9a9c8;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  border: 1px solid rgba(82, 92, 221, 0.2);
+  transition: all 0.2s ease;
+}
+
+.techBadge:hover {
+  background: rgba(82, 92, 221, 0.2);
+  color: #f1f1f3;
+  transform: translateY(-2px);
+}
+
+/* Education Section */
+.educationSection {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.educationSection h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  background: linear-gradient(to right, #f1f1f3, #6b6fc5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.educationCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.educationCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.educationCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.educationCard h3 {
+  font-size: 1.3rem;
+  margin: 0 0 0.5rem;
+  color: #f1f1f3;
+}
+
+.educationCard h4 {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+  color: #a9a9c8;
+  font-weight: 500;
+}
+
+.educationCard p {
+  color: #6b6b83;
+  font-size: 0.95rem;
+  margin: 0 0 1rem;
+}
+
+.gpa {
+  display: inline-block;
+  background: linear-gradient(45deg, rgba(82, 92, 221, 0.1), rgba(156, 63, 228, 0.1));
+  padding: 5px 15px;
+  border-radius: 20px;
+  color: #a9a9c8;
+  font-size: 0.9rem;
+  border: 1px solid rgba(82, 92, 221, 0.2);
 }
 
 /* Footer */
@@ -260,21 +319,17 @@
   .header {
     padding: 1.5rem 2rem;
   }
-  
+
   .main {
     padding: 3rem 2rem;
   }
-  
-  .pageHeader h1 {
-    font-size: 2.5rem;
+
+  .timeline::before {
+    left: 20px;
   }
-  
-  .timelineItem {
-    margin-bottom: 4rem;
-  }
-  
-  .footer {
-    padding: 2rem;
+
+  .educationCards {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -282,15 +337,14 @@
   .nav {
     gap: 20px;
   }
-  
+
   .timelineHeader {
     flex-direction: column;
     align-items: flex-start;
   }
-  
-  .companyLogo {
-    margin-bottom: 15px;
-    margin-right: 0;
+
+  .timelineContent {
+    padding: 1.5rem;
   }
 }
 
@@ -298,37 +352,33 @@
   .header {
     padding: 1rem;
   }
-  
+
   .headerContent {
     flex-direction: column;
     gap: 15px;
   }
-  
+
   .nav {
     width: 100%;
     justify-content: space-between;
   }
-  
+
   .main {
     padding: 2rem 1rem;
   }
-  
+
   .pageHeader h1 {
     font-size: 2rem;
   }
-  
-  .timelineConnector {
-    width: 30px;
+
+  .timelineContent h2 {
+    font-size: 1.3rem;
   }
-  
-  .timelineContent {
-    padding: 20px;
+
+  .timelineContent h3 {
+    font-size: 1.1rem;
   }
-  
-  .timelineDetails h2 {
-    font-size: 1.2rem;
-  }
-  
+
   .footer {
     flex-direction: column;
     gap: 15px;

@@ -192,6 +192,9 @@
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+  border-radius: 5px;
+  width: 35px;
+  height: 35px;
 }
 
 .projectCard h2 {

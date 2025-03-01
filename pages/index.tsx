@@ -43,24 +43,24 @@ const personalInfo = {
   ],
   experience: [
     {
-      title: "Senior Backend Engineer",
-      desc: "Currently leading backend engineering efforts at Alphanet Corp, focusing on designing and implementing scalable microservices architectures to support high-performance applications. (Sept 2024 - Present)",
-      logo: "/images/alphanet.png"
+      title: "Senior Software Engineer",
+      desc: "Developing and deploying microservices for Zest AI applications, scaling to handle 50,000+ credit score requests daily using Node.js and Redis. Implemented Redis-based caching strategy, reducing server costs by 30% and improving API response time by 25%. (Sept 2024 - Present)",
+      logo: "https://cdn-icons-png.flaticon.com/512/9173/9173061.png"
     },
     {
-      title: "Fullstack Blockchain Team Lead",
-      desc: "Led a team of developers in building decentralized blockchain applications and solutions at Antier Solutions. Successfully delivered multiple projects involving smart contracts, DeFi platforms, and NFT marketplaces. (Dec 2020 - July 2025)",
-      logo: "/images/antier.png"
+      title: "Full Stack Blockchain Developer & Team Lead",
+      desc: "Led a team of 20+ developers at Antier Solutions, building decentralized applications using Ethereum, Substrate, Cosmos SDK, and Tendermint frameworks. Designed smart contracts enabling secure transactions for 5,000+ users per month and integrated advanced blockchain tools like IPFS, Hyperledger Fabric, and Polkadot. (Dec 2020 - July 2024)",
+      logo: "https://cdn-icons-png.flaticon.com/512/6001/6001527.png"
     },
     {
       title: "Full Stack Software Developer",
-      desc: "Developed innovative web and mobile applications at Innow8 Apps Pvt Ltd, enhancing user engagement and system performance through modern technologies and best practices. Contributed to both frontend and backend development. (Feb 2019 - Dec 2020)",
-      logo: "/images/innow8.png"
+      desc: "Delivered 10+ blockchain-focused mobile and web projects at Innow8 Apps Pvt Ltd, from requirements gathering to deployment. Developed scalable web applications using React.js, Node.js and MongoDB, increasing user engagement by 30% and reducing server response time by 25%. (Feb 2019 - Dec 2020)",
+      logo: "https://cdn-icons-png.flaticon.com/512/8748/8748434.png"
     },
     {
       title: "Software Engineer",
-      desc: "Worked on enterprise-level software solutions at eNest Technologies Pvt Ltd, contributing to the design, development, and deployment of multiple successful projects. Gained hands-on experience in full-stack development and agile methodologies. (Jan 2018 - Sept 2018)",
-      logo: "/images/enest.png"
+      desc: "Prioritized and efficiently completed project tasks at eNest Technologies Pvt Ltd, contributing to the successful delivery of multiple projects. Coordinated cross-departmental efforts, ensuring seamless execution and timely delivery of milestones. (Jan 2018 - Sept 2018)",
+      logo: "https://cdn-icons-png.flaticon.com/512/2721/2721304.png"
     }
   ]
 };
@@ -124,7 +124,7 @@ const contactMethods = [
     title: 'WhatsApp',
     logo: 'https://user-images.githubusercontent.com/6418354/155842184-b064bf36-de8e-4317-8f8e-cb7755eed995.png',
     link: 'https://wa.me/+919855657566',
-    desc: "+919855657566"
+    desc: "+91 9855657566"
   },
   {
     title: 'Email',
@@ -143,6 +143,12 @@ const contactMethods = [
     logo: 'https://cdn-icons-png.flaticon.com/128/1051/1051275.png',
     link: 'https://github.com/kulwindervilasra/',
     desc: "View my code"
+  },
+  {
+    title: 'Portfolio',
+    logo: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
+    link: 'https://kulwindervilasra.github.io/portfolio/',
+    desc: "Visit my portfolio"
   },
 ];
 
