@@ -1,9 +1,9 @@
 
 import { useState, useEffect } from "react";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import styles from "../styles/Projects.module.css";
 import { motion } from "framer-motion";
-import NavBar from "../components/NavBar";
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -179,7 +179,17 @@ const Projects = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <NavBar />
+      <header className={styles.header}>
+        <div className={styles.headerContent}>
+          <a href="/" className={styles.logo}>KS</a>
+          <nav className={styles.nav}>
+            <a href="/">Home</a>
+            <a href="/experience">Experience</a>
+            <a href="/projects" className={styles.active}>Projects</a>
+            <a href="/#contact">Contact</a>
+          </nav>
+        </div>
+      </header>
 
       <main className={styles.main}>
         <motion.div 
