@@ -6,6 +6,9 @@ import { motion } from "framer-motion";
 import NavBar from "../components/NavBar";
 import SkillsGrid from "../components/SkillsGrid";
 import ServiceSection from "../components/ServiceSection";
+import GitHubProjects from "../components/GitHubProjects";
+import CareerTimeline from "../components/CareerTimeline";
+import FAQ from "../components/FAQ";
 
 // Data imported from the provided information
 const personalInfo = {
@@ -1117,6 +1120,15 @@ const Home = () => {
             </div>
           </div>
         </section>
+
+        {/* GitHub Projects */}
+        <GitHubProjects />
+
+        {/* Career Timeline */}
+        <CareerTimeline />
+
+        {/* FAQ Section */}
+        <FAQ />
 
         {/* CTA Banner */}
         <section className={styles.ctaBanner}>

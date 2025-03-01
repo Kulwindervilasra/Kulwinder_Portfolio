@@ -1,0 +1,134 @@
+
+.timelineContainer {
+  padding: 4rem 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timelineTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.timelineSubtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background: linear-gradient(180deg, 
+    rgba(107, 111, 197, 0.8) 0%, 
+    rgba(107, 111, 197, 0.3) 100%);
+}
+
+.timelineEvent {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.timelineEvent:last-child {
+  margin-bottom: 0;
+}
+
+.timelineMarker {
+  position: absolute;
+  left: -2rem;
+  top: 0;
+  height: 100%;
+}
+
+.timelinePoint {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6b6fc5 0%, #a98eda 100%);
+  box-shadow: 0 0 10px rgba(107, 111, 197, 0.5);
+  position: relative;
+  z-index: 2;
+}
+
+.timelineLine {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 2rem;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    rgba(107, 111, 197, 0.8) 0%, 
+    rgba(107, 111, 197, 0.1) 100%);
+}
+
+.timelineContent {
+  background: rgba(19, 21, 40, 0.7);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(107, 111, 197, 0.1);
+  transition: all 0.3s ease;
+}
+
+.timelineContent:hover {
+  background: rgba(22, 25, 48, 0.95);
+  border-color: rgba(107, 111, 197, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.timelineYear {
+  display: inline-block;
+  background: linear-gradient(135deg, #6b6fc5 0%, #a98eda 100%);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
+}
+
+.timelineEventTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  color: var(--text-color);
+}
+
+.timelineEventDesc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .timelineContainer {
+    padding: 3rem 1rem;
+  }
+  
+  .timeline {
+    padding-left: 1.5rem;
+  }
+  
+  .timelineMarker {
+    left: -1.5rem;
+  }
+  
+  .timelineLine {
+    width: 1.5rem;
+  }
+}
