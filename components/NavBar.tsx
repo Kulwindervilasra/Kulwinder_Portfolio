@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+
+import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "../styles/NavBar.module.css";
-import ThemeToggle from "./ThemeToggle";
+// import ThemeToggle from "./ThemeToggle";
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -44,7 +45,7 @@ const NavBar = () => {
             Blog
           </Link>
           <a href="/#contact">Contact</a>
-          <ThemeToggle />
+          {/* Removed ThemeToggle component */}
         </nav>
         <button
           className={styles.mobileMenuToggle}

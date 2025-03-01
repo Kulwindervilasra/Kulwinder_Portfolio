@@ -99,9 +99,14 @@ const ProjectCarousel = ({ projects = [] }: { projects?: Project[] }) => {
                       </span>
                     ))}
                   </div>
-                  <Link href={project.link} passHref legacyBehavior>
-                    <a className={styles.viewButton}>View Project</a>
-                  </Link>
+                  <a 
+                    href={project.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className={styles.viewButton}
+                  >
+                    View Project
+                  </a>
                 </div>
               </div>
             </div>
