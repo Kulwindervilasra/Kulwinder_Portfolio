@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
@@ -176,7 +175,7 @@ const Home = () => {
           >
             <h1 className={styles.name}>{personalInfo.name}</h1>
             <h2 className={styles.title}>{personalInfo.occupation}</h2>
-            
+
             <div className={styles.ctaContainer}>
               <a href="#contact" className={styles.primaryButton}>Hire Me</a>
               <a href="#projects" className={styles.secondaryButton}>View Projects</a>
