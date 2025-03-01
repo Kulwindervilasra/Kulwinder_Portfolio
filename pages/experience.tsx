@@ -1,7 +1,9 @@
+
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import styles from "../styles/Experience.module.css";
 import { motion } from "framer-motion";
+import NavBar from "../components/NavBar";
 
 const Experience = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -124,21 +126,7 @@ const Experience = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className={styles.header}>
-        <div className={styles.headerContent}>
-          <a href="/" className={styles.logo}>
-            KS
-          </a>
-          <nav className={styles.nav}>
-            <a href="/">Home</a>
-            <a href="/experience" className={styles.active}>
-              Experience
-            </a>
-            <a href="/projects">Projects</a>
-            <a href="/#contact">Contact</a>
-          </nav>
-        </div>
-      </header>
+      <NavBar />
 
       <main className={styles.main}>
         <motion.div

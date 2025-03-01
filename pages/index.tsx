@@ -1,8 +1,10 @@
+
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { motion } from "framer-motion";
+import NavBar from "../components/NavBar";
 
 // Data imported from the provided information
 const personalInfo = {
@@ -119,6 +121,34 @@ const developerSkills = [
   }
 ];
 
+// Additional skills with logos
+const additionalSkills = [
+  {
+    title: "GraphQL",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/1/17/GraphQL_Logo.svg"
+  },
+  {
+    title: "Python",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
+  },
+  {
+    title: "Redis",
+    logo: "https://upload.wikimedia.org/wikipedia/en/6/6b/Redis_Logo.svg"
+  },
+  {
+    title: "AWS",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
+  },
+  {
+    title: "Git",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg"
+  },
+  {
+    title: "RabbitMQ",
+    logo: "https://www.vectorlogo.zone/logos/rabbitmq/rabbitmq-icon.svg"
+  }
+];
+
 const contactMethods = [
   {
     title: 'WhatsApp',
@@ -154,10 +184,33 @@ const contactMethods = [
 
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form Data Submitted: ", formData);
+    setFormSubmitted(true);
+    setFormData({ name: "", email: "", message: "" });
+    
+    // Reset form submitted status after 3 seconds
+    setTimeout(() => {
+      setFormSubmitted(false);
+    }, 3000);
+  };
 
   return (
     <div className={styles.container}>
@@ -165,10 +218,9 @@ const Home = () => {
         <title>Kulwinder Singh | Blockchain Developer Portfolio</title>
         <meta name="description" content="Fullstack Blockchain Developer with over 7 years of experience. Specialized in Ethereum, Solidity, Web3, and full-stack development." />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
       </Head>
+
+      <NavBar />
 
       <main className={styles.main}>
         {/* Hero Section */}
@@ -184,7 +236,7 @@ const Home = () => {
 
             <div className={styles.ctaContainer}>
               <a href="#contact" className={styles.primaryButton}>Hire Me</a>
-              <a href="#projects" className={styles.secondaryButton}>View Projects</a>
+              <a href="/projects" className={styles.secondaryButton}>View Projects</a>
             </div>
 
             <div className={styles.quickContact}>
@@ -262,6 +314,29 @@ const Home = () => {
               </motion.div>
             ))}
           </div>
+
+          <div className={styles.sectionHeader} style={{ marginTop: '4rem' }}>
+            <h2>Additional Skills</h2>
+            <p>Complementary technologies and tools for robust solutions</p>
+          </div>
+
+          <div className={styles.skillsGrid}>
+            {additionalSkills.map((skill, index) => (
+              <motion.div 
+                key={index} 
+                className={styles.skillCard}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <div className={styles.skillIcon}>
+                  <img src={skill.logo} alt={skill.title} width={40} height={40} />
+                </div>
+                <h3>{skill.title}</h3>
+              </motion.div>
+            ))}
+          </div>
         </section>
 
         {/* Experience Preview */}
@@ -316,39 +391,120 @@ const Home = () => {
             <a href="#contact" className={styles.ctaButton}>Get in Touch</a>
           </motion.div>
         </section>
+
+        {/* Contact Form Section */}
+        <section id="contact" className={styles.contactFormSection}>
+          <motion.div 
+            className={styles.contactFormHeader}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2>Let's Connect</h2>
+            <p>Have a project in mind or want to explore collaboration opportunities? Send me a message!</p>
+          </motion.div>
+
+          <div className={styles.contactFormWrapper}>
+            <motion.form 
+              className={styles.contactForm}
+              onSubmit={handleSubmit}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              {formSubmitted ? (
+                <div className={styles.formSuccess}>
+                  <div className={styles.successIcon}>✓</div>
+                  <h3>Message Received!</h3>
+                  <p>Thank you for contacting me. I'll get back to you as soon as possible.</p>
+                </div>
+              ) : (
+                <>
+                  <div className={styles.formGroup}>
+                    <label htmlFor="name">Your Name</label>
+                    <input 
+                      type="text" 
+                      id="name"
+                      name="name" 
+                      value={formData.name}
+                      onChange={handleChange}
+                      required 
+                      placeholder="John Doe"
+                    />
+                  </div>
+                  
+                  <div className={styles.formGroup}>
+                    <label htmlFor="email">Your Email</label>
+                    <input 
+                      type="email" 
+                      id="email"
+                      name="email" 
+                      value={formData.email}
+                      onChange={handleChange}
+                      required 
+                      placeholder="johndoe@example.com"
+                    />
+                  </div>
+                  
+                  <div className={styles.formGroup}>
+                    <label htmlFor="message">Your Message</label>
+                    <textarea 
+                      id="message"
+                      name="message" 
+                      value={formData.message}
+                      onChange={handleChange}
+                      required 
+                      rows={6}
+                      placeholder="I'd like to discuss a blockchain project..."
+                    ></textarea>
+                  </div>
+                  
+                  <button type="submit" className={styles.submitButton}>Send Message</button>
+                </>
+              )}
+            </motion.form>
+
+            <motion.div 
+              className={styles.contactMethodsGrid}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              {contactMethods.map((contact, index) => (
+                <a 
+                  key={index} 
+                  href={contact.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className={styles.contactMethod}
+                >
+                  <div className={styles.contactMethodIcon}>
+                    <img src={contact.logo} alt={contact.title} width={32} height={32} />
+                  </div>
+                  <div className={styles.contactMethodInfo}>
+                    <h3>{contact.title}</h3>
+                    <p>{contact.desc}</p>
+                  </div>
+                </a>
+              ))}
+            </motion.div>
+          </div>
+        </section>
       </main>
 
-      {/* Footer with Contact */}
-      <footer id="contact" className={styles.footer}>
-        <div className={styles.contactWrapper}>
-          <div className={styles.contactHeader}>
-            <h2>Contact Me</h2>
-            <p>Let's discuss your project requirements</p>
-          </div>
-
-          <div className={styles.contactGrid}>
-            {contactMethods.map((contact, index) => (
-              <a 
-                key={index} 
-                href={contact.link} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className={styles.contactCard}
-              >
-                <div className={styles.contactIcon}>
-                  <img src={contact.logo} alt={contact.title} width={32} height={32} />
-                </div>
-                <div className={styles.contactInfo}>
-                  <h3>{contact.title}</h3>
-                  <p>{contact.desc}</p>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-
+      {/* Footer */}
+      <footer className={styles.footer}>
         <div className={styles.copyright}>
           <p>&copy; {new Date().getFullYear()} Kulwinder Singh. All rights reserved.</p>
+        </div>
+        <div 
+          className={styles.backToTop}
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
+          Back to Top ↑
         </div>
       </footer>
     </div>
