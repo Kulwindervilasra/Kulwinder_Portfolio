@@ -5,7 +5,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { motion } from "framer-motion";
 import NavBar from "../components/NavBar";
-import SkillsRadar from "../components/SkillsRadar";
+import SkillsGrid from "../components/SkillsGrid";
 import ProjectCarousel from "../components/ProjectCarousel";
 import ServiceSection from "../components/ServiceSection";
 
@@ -71,33 +71,7 @@ const personalInfo = {
   ],
 };
 
-// Define skills data outside of personalInfo object
-const blockchainSkills = [
-  { name: "Ethereum", level: 90 },
-  { name: "Solidity", level: 85 },
-  { name: "Web3.js", level: 80 },
-  { name: "Substrate", level: 75 },
-  { name: "Cosmos SDK", level: 70 },
-  { name: "Smart Contracts", level: 85 }
-];
 
-const developerSkills = [
-  { name: "JavaScript", level: 90 },
-  { name: "TypeScript", level: 85 },
-  { name: "React.js", level: 80 },
-  { name: "Node.js", level: 85 },
-  { name: "MongoDB", level: 75 },
-  { name: "GraphQL", level: 70 }
-];
-
-const additionalSkills = [
-  { name: "CI/CD", level: 75 },
-  { name: "Docker", level: 80 },
-  { name: "AWS", level: 70 },
-  { name: "Testing", level: 75 },
-  { name: "Agile", level: 85 },
-  { name: "UI/UX", level: 65 }
-];
 
 // Blockchain skills with logos
 const blockchainSkillsWithLogos = [
@@ -223,6 +197,34 @@ const Home = () => {
     message: "",
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
+
+  // Skills data
+  const blockchainSkills = [
+    { name: "Ethereum", level: 90 },
+    { name: "Solidity", level: 85 },
+    { name: "Web3.js", level: 80 },
+    { name: "Substrate", level: 75 },
+    { name: "Cosmos SDK", level: 70 },
+    { name: "Smart Contracts", level: 85 }
+  ];
+
+  const developerSkills = [
+    { name: "JavaScript", level: 90 },
+    { name: "TypeScript", level: 85 },
+    { name: "React.js", level: 80 },
+    { name: "Node.js", level: 85 },
+    { name: "MongoDB", level: 75 },
+    { name: "GraphQL", level: 70 }
+  ];
+
+  const additionalSkills = [
+    { name: "CI/CD", level: 75 },
+    { name: "Docker", level: 80 },
+    { name: "AWS", level: 70 },
+    { name: "Testing", level: 75 },
+    { name: "Agile", level: 85 },
+    { name: "UI/UX", level: 65 }
+  ];
 
   useEffect(() => {
     setIsVisible(true);
@@ -366,7 +368,18 @@ const Home = () => {
             </p>
           </div>
 
-          <SkillsRadar skills={blockchainSkills || []} title="Blockchain Skills" />
+          <SkillsGrid 
+            skills={blockchainSkills || []} 
+            title="Blockchain Skills" 
+            logoUrls={{
+              "Ethereum": "https://upload.wikimedia.org/wikipedia/commons/0/05/Ethereum_logo_2014.svg",
+              "Solidity": "https://upload.wikimedia.org/wikipedia/commons/9/98/Solidity_logo.svg",
+              "Web3.js": "https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/web-3-icon.png",
+              "Substrate": "https://cryptologos.cc/logos/polkadot-new-dot-logo.svg?v=040",
+              "Cosmos SDK": "https://v1.cosmos.network/img/favicon.ico",
+              "Smart Contracts": "https://img.icons8.com/cotton/64/blockchain-technology--v1.png"
+            }}
+          />
 
           <div className={styles.sectionHeader} style={{ marginTop: "4rem" }}>
             <h2>Development Skills</h2>
@@ -375,14 +388,36 @@ const Home = () => {
             </p>
           </div>
 
-          <SkillsRadar skills={developerSkills || []} title="Development Skills" />
+          <SkillsGrid 
+            skills={developerSkills || []} 
+            title="Development Skills" 
+            logoUrls={{
+              "JavaScript": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+              "TypeScript": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
+              "React.js": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+              "Node.js": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg",
+              "MongoDB": "https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg",
+              "GraphQL": "https://upload.wikimedia.org/wikipedia/commons/1/17/GraphQL_Logo.svg"
+            }}
+          />
 
           <div className={styles.sectionHeader} style={{ marginTop: "4rem" }}>
             <h2>Additional Skills</h2>
             <p>Complementary technologies and tools for robust solutions</p>
           </div>
 
-          <SkillsRadar skills={additionalSkills || []} title="Additional Skills" />
+          <SkillsGrid 
+            skills={additionalSkills || []} 
+            title="Additional Skills" 
+            logoUrls={{
+              "CI/CD": "https://cdn-icons-png.flaticon.com/512/6133/6133886.png",
+              "Docker": "https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png",
+              "AWS": "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
+              "Testing": "https://cdn-icons-png.flaticon.com/512/2232/2232009.png",
+              "Agile": "https://cdn-icons-png.flaticon.com/512/2620/2620865.png",
+              "UI/UX": "https://cdn-icons-png.flaticon.com/512/5065/5065880.png"
+            }}
+          />
         </section>
 
         {/* Experience Preview */}
