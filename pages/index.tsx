@@ -6,7 +6,6 @@ import styles from "../styles/Home.module.css";
 import { motion } from "framer-motion";
 import NavBar from "../components/NavBar";
 import SkillsGrid from "../components/SkillsGrid";
-import ProjectCarousel from "../components/ProjectCarousel";
 import ServiceSection from "../components/ServiceSection";
 
 // Data imported from the provided information
@@ -384,38 +383,67 @@ const Home = () => {
           </div>
         </section>
 
-        {/* Project Carousel */}
+        {/* Featured Projects Section */}
         <section className={styles.section}>
           <div className={styles.sectionHeader}>
             <h2>Featured Projects</h2>
             <p>A selection of my recent blockchain and web development work</p>
           </div>
-          <ProjectCarousel projects={[
-            {
-              id: 1,
-              title: "5ireChain Network",
-              description: "Created a Substrate-based NPOS blockchain with native token support and applications like IDEs and Wallet extensions.",
-              image: "https://5ire.org/static/media/logo-dark.9a0588a2.svg",
-              link: "https://5ire.org/",
-              technologies: ["Substrate", "Polkadot", "Rust", "Web3.js", "React", "WASM"]
-            },
-            {
-              id: 2,
-              title: "Zest AI",
-              description: "Built backend systems for AI-driven credit underwriting using Node.js, integrating machine learning models to automate loan workflows.",
-              image: "https://www.zest.ai/wp-content/themes/zest/images/Zest--logo.png",
-              link: "https://zest.ai/",
-              technologies: ["Node.js", "Redis", "Microservices", "RabbitMQ", "Docker", "AI/ML"]
-            },
-            {
-              id: 3,
-              title: "SaitaChain",
-              description: "Implemented decentralized apps for the scalable Layer 0 blockchain ecosystem, including Validator/Nominator apps and a DEX.",
-              image: "https://saitachain.com/saitachainlogo.png",
-              link: "https://saitachain.com/",
-              technologies: ["Layer 0", "Blockchain", "DApps", "DEX", "Solidity", "Cross-Chain"]
-            }
-          ]} />
+          <div className={styles.projectsGrid}>
+            <div className={styles.projectCard}>
+              <div className={styles.projectImage}>
+                <img src="https://5ire.org/static/media/logo-dark.9a0588a2.svg" alt="5ireChain Network" />
+              </div>
+              <div className={styles.projectContent}>
+                <h3>5ireChain Network</h3>
+                <p>Created a Substrate-based NPOS blockchain with native token support and applications like IDEs and Wallet extensions.</p>
+                <div className={styles.technologies}>
+                  {["Substrate", "Polkadot", "Rust", "Web3.js", "React", "WASM"].map((tech, i) => (
+                    <span key={i} className={styles.techTag}>{tech}</span>
+                  ))}
+                </div>
+                <a href="https://5ire.org/" target="_blank" rel="noopener noreferrer" className={styles.viewButton}>
+                  View Project
+                </a>
+              </div>
+            </div>
+            
+            <div className={styles.projectCard}>
+              <div className={styles.projectImage}>
+                <img src="https://www.zest.ai/wp-content/themes/zest/images/Zest--logo.png" alt="Zest AI" />
+              </div>
+              <div className={styles.projectContent}>
+                <h3>Zest AI</h3>
+                <p>Built backend systems for AI-driven credit underwriting using Node.js, integrating machine learning models to automate loan workflows.</p>
+                <div className={styles.technologies}>
+                  {["Node.js", "Redis", "Microservices", "RabbitMQ", "Docker", "AI/ML"].map((tech, i) => (
+                    <span key={i} className={styles.techTag}>{tech}</span>
+                  ))}
+                </div>
+                <a href="https://zest.ai/" target="_blank" rel="noopener noreferrer" className={styles.viewButton}>
+                  View Project
+                </a>
+              </div>
+            </div>
+            
+            <div className={styles.projectCard}>
+              <div className={styles.projectImage}>
+                <img src="https://saitachain.com/saitachainlogo.png" alt="SaitaChain" />
+              </div>
+              <div className={styles.projectContent}>
+                <h3>SaitaChain</h3>
+                <p>Implemented decentralized apps for the scalable Layer 0 blockchain ecosystem, including Validator/Nominator apps and a DEX.</p>
+                <div className={styles.technologies}>
+                  {["Layer 0", "Blockchain", "DApps", "DEX", "Solidity", "Cross-Chain"].map((tech, i) => (
+                    <span key={i} className={styles.techTag}>{tech}</span>
+                  ))}
+                </div>
+                <a href="https://saitachain.com/" target="_blank" rel="noopener noreferrer" className={styles.viewButton}>
+                  View Project
+                </a>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* Service Section */}
