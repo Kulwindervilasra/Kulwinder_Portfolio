@@ -11,30 +11,46 @@ interface Project {
   technologies: string[];
 }
 
-const ProjectCarousel = ({ projects }: { projects: Project[] }) => {
+const ProjectCarousel = ({ projects = [] }: { projects?: Project[] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
+    if (projects.length === 0) return;
+    
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % projects?.length);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [projects?.length]);
+  }, [projects.length]);
 
   const handleDotClick = (index: number) => {
     setCurrentIndex(index);
   };
 
   const handlePrevClick = () => {
+    if (projects.length === 0) return;
+    
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? projects.length - 1 : prevIndex - 1,
     );
   };
 
   const handleNextClick = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % projects?.length);
+    if (projects.length === 0) return;
+    
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
   };
+
+  if (!projects || projects.length === 0) {
+    return (
+      <div className={styles.carouselContainer}>
+        <div className={styles.noProjects}>
+          <p>No projects available to display</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.carouselContainer}>
@@ -63,8 +79,8 @@ const ProjectCarousel = ({ projects }: { projects: Project[] }) => {
           className={styles.carouselTrack}
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
-          {projects?.map((project, index) => (
-            <div key={project.id} className={styles.carouselSlide}>
+          {projects.map((project, index) => (
+            <div key={project.id || index} className={styles.carouselSlide}>
               <div className={styles.projectCard}>
                 <div className={styles.projectImageContainer}>
                   <img
@@ -83,8 +99,8 @@ const ProjectCarousel = ({ projects }: { projects: Project[] }) => {
                       </span>
                     ))}
                   </div>
-                  <Link href={project.link} passHref>
-                    <span className={styles.viewButton}>View Project</span>
+                  <Link href={project.link} passHref legacyBehavior>
+                    <a className={styles.viewButton}>View Project</a>
                   </Link>
                 </div>
               </div>
@@ -114,7 +130,7 @@ const ProjectCarousel = ({ projects }: { projects: Project[] }) => {
       </div>
 
       <div className={styles.carouselDots}>
-        {projects?.map((_, index) => (
+        {projects.map((_, index) => (
           <button
             key={index}
             className={`${styles.carouselDot} ${index === currentIndex ? styles.carouselDotActive : ""}`}

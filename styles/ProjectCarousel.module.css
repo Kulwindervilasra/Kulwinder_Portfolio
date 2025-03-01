@@ -7,6 +7,21 @@
   position: relative;
 }
 
+.noProjects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.noProjects p {
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
 .carousel {
   position: relative;
   overflow: hidden;
