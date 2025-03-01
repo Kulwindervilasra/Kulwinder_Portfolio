@@ -17,6 +17,35 @@ const personalInfo = {
     {
       name: "WhatsApp",
       link: "https://wa.me/+919855657566",
+
+// Sample skills data
+const blockchainSkills = [
+  { name: "Ethereum", level: 90 },
+  { name: "Solidity", level: 85 },
+  { name: "Web3.js", level: 80 },
+  { name: "Substrate", level: 75 },
+  { name: "Cosmos SDK", level: 70 },
+  { name: "Smart Contracts", level: 85 }
+];
+
+const developerSkills = [
+  { name: "JavaScript", level: 90 },
+  { name: "TypeScript", level: 85 },
+  { name: "React.js", level: 80 },
+  { name: "Node.js", level: 85 },
+  { name: "MongoDB", level: 75 },
+  { name: "GraphQL", level: 70 }
+];
+
+const additionalSkills = [
+  { name: "CI/CD", level: 75 },
+  { name: "Docker", level: 80 },
+  { name: "AWS", level: 70 },
+  { name: "Testing", level: 75 },
+  { name: "Agile", level: 85 },
+  { name: "UI/UX", level: 65 }
+];
+
     },
     {
       name: "Telegram",
@@ -336,7 +365,7 @@ const Home = () => {
             </p>
           </div>
 
-          <SkillsRadar skills={blockchainSkills} title="Blockchain Skills" />
+          <SkillsRadar skills={blockchainSkills || []} title="Blockchain Skills" />
 
           <div className={styles.sectionHeader} style={{ marginTop: "4rem" }}>
             <h2>Development Skills</h2>
@@ -345,14 +374,14 @@ const Home = () => {
             </p>
           </div>
 
-          <SkillsRadar skills={developerSkills} title="Development Skills" />
+          <SkillsRadar skills={developerSkills || []} title="Development Skills" />
 
           <div className={styles.sectionHeader} style={{ marginTop: "4rem" }}>
             <h2>Additional Skills</h2>
             <p>Complementary technologies and tools for robust solutions</p>
           </div>
 
-          <SkillsRadar skills={additionalSkills} title="Additional Skills" />
+          <SkillsRadar skills={additionalSkills || []} title="Additional Skills" />
         </section>
 
         {/* Experience Preview */}

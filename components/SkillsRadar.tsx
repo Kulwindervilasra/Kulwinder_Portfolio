@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import styles from '../styles/SkillsRadar.module.css';
 
@@ -19,14 +18,14 @@ const SkillsRadar = ({ skills }: SkillsRadarProps) => {
 
   const getRadarCoordinates = (index: number, total: number, radius: number) => {
     if (total === 0) return { x: 150, y: 150 }; // Center point if no skills
-    
+
     // Calculate angle based on index and total number of points
     const angle = (Math.PI * 2 * index) / total;
-    
-    // Calculate coordinates with fixed precision to avoid React hydration warnings
-    const x = Number((radius * Math.sin(angle) + 150).toFixed(2)); // Center X + offset
-    const y = Number((radius * Math.cos(angle) + 150).toFixed(2)); // Center Y + offset
-    
+
+    // Use Math.round to ensure whole numbers and prevent hydration mismatches
+    const x = Math.round(radius * Math.sin(angle) + 150); // Center X + offset
+    const y = Math.round(radius * Math.cos(angle) + 150); // Center Y + offset
+
     return { x, y };
   };
 
@@ -39,7 +38,7 @@ const SkillsRadar = ({ skills }: SkillsRadarProps) => {
           <div className={styles.circle} style={{ width: '40%', height: '40%' }}></div>
           <div className={styles.circle} style={{ width: '20%', height: '20%' }}></div>
         </div>
-        
+
         <svg width="300" height="300" viewBox="0 0 300 300">
           <g>
             {/* Radar lines */}
@@ -57,7 +56,7 @@ const SkillsRadar = ({ skills }: SkillsRadarProps) => {
                 />
               );
             })}
-            
+
             {/* Skill labels */}
             {skills.map((skill, index) => {
               const coords = getRadarCoordinates(index, skills.length, 140);
@@ -77,7 +76,7 @@ const SkillsRadar = ({ skills }: SkillsRadarProps) => {
                 </text>
               );
             })}
-            
+
             {/* Radar polygon for skills */}
             {skills.length > 0 && (
               <polygon
@@ -91,7 +90,7 @@ const SkillsRadar = ({ skills }: SkillsRadarProps) => {
                 strokeWidth="2"
               />
             )}
-            
+
             {/* Skill points */}
             {skills.map((skill, index) => {
               const radius = (skill.level / 100) * 120;
