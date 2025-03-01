@@ -1,0 +1,21 @@
+
+.themeToggle {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.themeToggle:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+:global(.dark-mode) .themeToggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}

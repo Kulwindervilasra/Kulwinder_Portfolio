@@ -377,6 +377,55 @@ const Home = () => {
           </div>
         </section>
 
+        {/* Testimonials Section */}
+        <section className={styles.testimonialsSection}>
+          <div className={styles.sectionHeader}>
+            <h2>Client Testimonials</h2>
+            <p>What clients and colleagues say about working with me</p>
+          </div>
+          
+          <div className={styles.testimonialSlider}>
+            <div className={styles.testimonialCard}>
+              <div className={styles.testimonialContent}>
+                <p>"Kulwinder delivered exceptional results for our DeFi project. His technical expertise and ability to solve complex blockchain challenges made him an invaluable asset to our team. Would definitely work with him again!"</p>
+              </div>
+              <div className={styles.testimonialAuthor}>
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" />
+                <div>
+                  <h4>Alex Thompson</h4>
+                  <p>CTO, DeFi Solutions</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className={styles.testimonialCard}>
+              <div className={styles.testimonialContent}>
+                <p>"Working with Kulwinder transformed our blockchain infrastructure. His deep understanding of both frontend and backend technologies helped us create a seamless user experience while maintaining robust security standards."</p>
+              </div>
+              <div className={styles.testimonialAuthor}>
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" />
+                <div>
+                  <h4>Sarah Johnson</h4>
+                  <p>Product Manager, CryptoTech</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className={styles.testimonialCard}>
+              <div className={styles.testimonialContent}>
+                <p>"Kulwinder's leadership skills are exceptional. He guided our development team through challenging projects with clear communication and technical excellence. His blockchain expertise significantly accelerated our time to market."</p>
+              </div>
+              <div className={styles.testimonialAuthor}>
+                <img src="https://randomuser.me/api/portraits/men/62.jpg" alt="Client" />
+                <div>
+                  <h4>Michael Chen</h4>
+                  <p>Founder, BlockChain Ventures</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Banner */}
         <section className={styles.ctaBanner}>
           <motion.div 
