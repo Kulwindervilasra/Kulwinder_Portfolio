@@ -38,6 +38,22 @@ const SkillsGrid = ({ skills, title, logoUrls = {} }: SkillsGridProps) => {
     return logoUrls[skill] || defaultLogos[skill] || "https://cdn-icons-png.flaticon.com/512/4616/4616734.png";
   };
 
+  // Calculate skill level color based on proficiency
+  const getSkillLevelColor = (level: number) => {
+    if (level >= 90) return '#3dd598'; // Expert level
+    if (level >= 80) return '#6b6fc5'; // Advanced level
+    if (level >= 70) return '#ffc107'; // Intermediate level
+    return '#ff7551'; // Beginner level
+  };
+
+  // Get skill level text
+  const getSkillLevelText = (level: number) => {
+    if (level >= 90) return 'Expert';
+    if (level >= 80) return 'Advanced';
+    if (level >= 70) return 'Proficient';
+    return 'Intermediate';
+  };
+
   return (
     <div className={styles.skillsContainer}>
       {title && <h3 className={styles.skillsTitle}>{title}</h3>}
@@ -53,9 +69,15 @@ const SkillsGrid = ({ skills, title, logoUrls = {} }: SkillsGridProps) => {
             <div className={styles.skillProgressContainer}>
               <div 
                 className={styles.skillProgress} 
-                style={{ width: `${skill.level}%` }}
+                style={{ 
+                  width: `${skill.level}%`,
+                  background: `linear-gradient(90deg, ${getSkillLevelColor(skill.level)} 0%, ${getSkillLevelColor(skill.level)}99 100%)`
+                }}
               >
-                <span className={styles.skillLevel}>{skill.level}%</span>
+                <span className={styles.skillLevel}>
+                  <span className={styles.skillLevelPercent}>{skill.level}%</span>
+                  <span className={styles.skillLevelText}>{getSkillLevelText(skill.level)}</span>
+                </span>
               </div>
             </div>
           </div>
