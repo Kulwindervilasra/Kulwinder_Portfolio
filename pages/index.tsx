@@ -180,12 +180,12 @@ const contactMethods = [
     link: "https://github.com/kulwindervilasra/",
     desc: "View my code",
   },
- // {
+  // {
   //  title: "Portfolio",
   //  logo: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
- //   link: "https://kulwindervilasra.github.io/portfolio/",
- //   desc: "Visit my portfolio",
-//  },
+  //   link: "https://kulwindervilasra.github.io/portfolio/",
+  //   desc: "Visit my portfolio",
+  //  },
 ];
 
 const experiences = [
@@ -215,7 +215,7 @@ const experiences = [
       "Nest.js",
     ],
   },
- {
+  {
     title: "Full Stack Blockchain Developer & Team Lead",
     company: "Antier Solutions Pvt Ltd",
     location: "Mohali, Punjab",
@@ -278,7 +278,6 @@ const experiences = [
     ],
   },
 ];
-
 
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -589,10 +588,7 @@ const Home = () => {
           <div className={styles.projectsGrid}>
             <div className={styles.projectCard}>
               <div className={styles.projectImage}>
-                <img
-                  src="https://5ire.org/static/media/logo-dark.9a0588a2.svg"
-                  alt="5ireChain Network"
-                />
+                <img src="./images/fire.png" alt="5ireChain Network" />
               </div>
               <div className={styles.projectContent}>
                 <h3>5ireChain Network</h3>
@@ -908,21 +904,32 @@ const Home = () => {
           <SkillsGrid
             skills={cloudServicesSkills}
             logoUrls={{
-              "AWS Lambda": "https://symbols.getvecta.com/stencil_98/3_aws-lambda.68cb43f88e.svg",
-              "EC2": "https://symbols.getvecta.com/stencil_4/8_aws-ec2.a6524b9687.svg",
-              "S3": "https://symbols.getvecta.com/stencil_4/1_aws-s3.86ebde61f5.svg",
-              "RDS": "https://symbols.getvecta.com/stencil_7/36_aws-rds.dacbe6bc21.svg",
-              "CloudFront": "https://symbols.getvecta.com/stencil_7/17_aws-cloudfront.53c4da6a94.svg",
-              "Google Cloud Functions": "https://www.gstatic.com/devrel-devsite/prod/vbd4700e58d826f0eab371eadc20e0e343567df356800794a2feac16fd0ee9bca/cloud/images/cloud-functions-icon.svg",
-              "Firebase Functions": "https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_96dp.png",
-              "Azure Functions": "https://azurecomcdn.azureedge.net/cvt-1e062bfe6f4cb8dd5c4dc0957dd9016ac4224956d4d3e4848eb157700829f0b/images/page/products/functions/functions.svg",
-              "Heroku": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Heroku_logo.svg",
-              "Vercel": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Vercel_logo_black.svg",
-              "Netlify": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Netlify_logo.svg",
-              "Digital Ocean": "https://upload.wikimedia.org/wikipedia/commons/f/ff/DigitalOcean_logo.svg",
+              "AWS Lambda":
+                "https://symbols.getvecta.com/stencil_98/3_aws-lambda.68cb43f88e.svg",
+              EC2: "https://symbols.getvecta.com/stencil_4/8_aws-ec2.a6524b9687.svg",
+              S3: "https://symbols.getvecta.com/stencil_4/1_aws-s3.86ebde61f5.svg",
+              RDS: "https://symbols.getvecta.com/stencil_7/36_aws-rds.dacbe6bc21.svg",
+              CloudFront:
+                "https://symbols.getvecta.com/stencil_7/17_aws-cloudfront.53c4da6a94.svg",
+              "Google Cloud Functions":
+                "https://www.gstatic.com/devrel-devsite/prod/vbd4700e58d826f0eab371eadc20e0e343567df356800794a2feac16fd0ee9bca/cloud/images/cloud-functions-icon.svg",
+              "Firebase Functions":
+                "https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_96dp.png",
+              "Azure Functions":
+                "https://azurecomcdn.azureedge.net/cvt-1e062bfe6f4cb8dd5c4dc0957dd9016ac4224956d4d3e4848eb157700829f0b/images/page/products/functions/functions.svg",
+              Heroku:
+                "https://upload.wikimedia.org/wikipedia/commons/e/ec/Heroku_logo.svg",
+              Vercel:
+                "https://upload.wikimedia.org/wikipedia/commons/5/5e/Vercel_logo_black.svg",
+              Netlify:
+                "https://upload.wikimedia.org/wikipedia/commons/b/b8/Netlify_logo.svg",
+              "Digital Ocean":
+                "https://upload.wikimedia.org/wikipedia/commons/f/ff/DigitalOcean_logo.svg",
               "AWS Amplify": "https://docs.amplify.aws/assets/logo-dark.svg",
-              "AWS AppSync": "https://symbols.getvecta.com/stencil_7/6_aws-appsync.87921e3cbc.svg",
-              "AWS CDK": "https://symbols.getvecta.com/stencil_11/6_aws-cloud-development-kit.3dca8daaad.svg",
+              "AWS AppSync":
+                "https://symbols.getvecta.com/stencil_7/6_aws-appsync.87921e3cbc.svg",
+              "AWS CDK":
+                "https://symbols.getvecta.com/stencil_11/6_aws-cloud-development-kit.3dca8daaad.svg",
             }}
           />
 
@@ -934,21 +941,33 @@ const Home = () => {
           <SkillsGrid
             skills={messagingSkills}
             logoUrls={{
-              "RabbitMQ": "https://www.vectorlogo.zone/logos/rabbitmq/rabbitmq-icon.svg",
-              "Kafka": "https://upload.wikimedia.org/wikipedia/commons/0/05/Apache_kafka.svg",
-              "NATS": "https://avatars.githubusercontent.com/u/3441858?s=200&v=4",
-              "Redis Pub/Sub": "https://upload.wikimedia.org/wikipedia/en/6/6b/Redis_Logo.svg",
-              "AWS SQS": "https://symbols.getvecta.com/stencil_4/10_aws-sqs.5e4fddd812.svg",
-              "AWS SNS": "https://symbols.getvecta.com/stencil_9/2_aws-sns.3def01e127.svg",
-              "gRPC": "https://grpc.io/img/logos/grpc-icon-color.png",
-              "WebSockets": "https://cdn-icons-png.flaticon.com/512/6119/6119533.png",
-              "Socket.io": "https://upload.wikimedia.org/wikipedia/commons/9/96/Socket-io.svg",
-              "GraphQL Subscriptions": "https://upload.wikimedia.org/wikipedia/commons/1/17/GraphQL_Logo.svg",
-              "Event-Driven Architecture": "https://cdn-icons-png.flaticon.com/512/2232/2232688.png",
-              "Message Queues": "https://cdn-icons-png.flaticon.com/512/7213/7213441.png",
-              "Event Sourcing": "https://cdn-icons-png.flaticon.com/512/6119/6119533.png",
-              "CQRS": "https://cdn-icons-png.flaticon.com/512/7213/7213411.png",
-              "Pub/Sub Patterns": "https://cdn-icons-png.flaticon.com/512/7213/7213419.png",
+              RabbitMQ:
+                "https://www.vectorlogo.zone/logos/rabbitmq/rabbitmq-icon.svg",
+              Kafka:
+                "https://upload.wikimedia.org/wikipedia/commons/0/05/Apache_kafka.svg",
+              NATS: "https://avatars.githubusercontent.com/u/3441858?s=200&v=4",
+              "Redis Pub/Sub":
+                "https://upload.wikimedia.org/wikipedia/en/6/6b/Redis_Logo.svg",
+              "AWS SQS":
+                "https://symbols.getvecta.com/stencil_4/10_aws-sqs.5e4fddd812.svg",
+              "AWS SNS":
+                "https://symbols.getvecta.com/stencil_9/2_aws-sns.3def01e127.svg",
+              gRPC: "https://grpc.io/img/logos/grpc-icon-color.png",
+              WebSockets:
+                "https://cdn-icons-png.flaticon.com/512/6119/6119533.png",
+              "Socket.io":
+                "https://upload.wikimedia.org/wikipedia/commons/9/96/Socket-io.svg",
+              "GraphQL Subscriptions":
+                "https://upload.wikimedia.org/wikipedia/commons/1/17/GraphQL_Logo.svg",
+              "Event-Driven Architecture":
+                "https://cdn-icons-png.flaticon.com/512/2232/2232688.png",
+              "Message Queues":
+                "https://cdn-icons-png.flaticon.com/512/7213/7213441.png",
+              "Event Sourcing":
+                "https://cdn-icons-png.flaticon.com/512/6119/6119533.png",
+              CQRS: "https://cdn-icons-png.flaticon.com/512/7213/7213411.png",
+              "Pub/Sub Patterns":
+                "https://cdn-icons-png.flaticon.com/512/7213/7213419.png",
             }}
           />
 
@@ -986,21 +1005,36 @@ const Home = () => {
           <SkillsGrid
             skills={additionalSkills}
             logoUrls={{
-              "Agile/Scrum": "https://cdn-icons-png.flaticon.com/512/2620/2620865.png",
-              "Git/GitHub": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg",
-              "Team Leadership": "https://cdn-icons-png.flaticon.com/512/1651/1651203.png",
-              "UI/UX Design": "https://cdn-icons-png.flaticon.com/512/5065/5065880.png",
-              "Performance Optimization": "https://cdn-icons-png.flaticon.com/512/1447/1447163.png",
-              "Security Best Practices": "https://cdn-icons-png.flaticon.com/512/2335/2335353.png",
-              "Project Management": "https://cdn-icons-png.flaticon.com/512/3281/3281307.png",
-              "Technical Writing": "https://cdn-icons-png.flaticon.com/512/4336/4336037.png",
-              "System Architecture": "https://cdn-icons-png.flaticon.com/512/9387/9387696.png",
-              "Mentoring": "https://cdn-icons-png.flaticon.com/512/1651/1651648.png",
-              "Code Reviews": "https://cdn-icons-png.flaticon.com/512/3953/3953226.png",
-              "SEO Optimization": "https://cdn-icons-png.flaticon.com/512/1968/1968666.png",
-              "Analytics Integration": "https://cdn-icons-png.flaticon.com/512/6598/6598519.png",
-              "Public Speaking": "https://cdn-icons-png.flaticon.com/512/1652/1652222.png",
-              "Problem Solving": "https://cdn-icons-png.flaticon.com/512/3406/3406226.png",
+              "Agile/Scrum":
+                "https://cdn-icons-png.flaticon.com/512/2620/2620865.png",
+              "Git/GitHub":
+                "https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg",
+              "Team Leadership":
+                "https://cdn-icons-png.flaticon.com/512/1651/1651203.png",
+              "UI/UX Design":
+                "https://cdn-icons-png.flaticon.com/512/5065/5065880.png",
+              "Performance Optimization":
+                "https://cdn-icons-png.flaticon.com/512/1447/1447163.png",
+              "Security Best Practices":
+                "https://cdn-icons-png.flaticon.com/512/2335/2335353.png",
+              "Project Management":
+                "https://cdn-icons-png.flaticon.com/512/3281/3281307.png",
+              "Technical Writing":
+                "https://cdn-icons-png.flaticon.com/512/4336/4336037.png",
+              "System Architecture":
+                "https://cdn-icons-png.flaticon.com/512/9387/9387696.png",
+              Mentoring:
+                "https://cdn-icons-png.flaticon.com/512/1651/1651648.png",
+              "Code Reviews":
+                "https://cdn-icons-png.flaticon.com/512/3953/3953226.png",
+              "SEO Optimization":
+                "https://cdn-icons-png.flaticon.com/512/1968/1968666.png",
+              "Analytics Integration":
+                "https://cdn-icons-png.flaticon.com/512/6598/6598519.png",
+              "Public Speaking":
+                "https://cdn-icons-png.flaticon.com/512/1652/1652222.png",
+              "Problem Solving":
+                "https://cdn-icons-png.flaticon.com/512/3406/3406226.png",
             }}
           />
         </section>
@@ -1154,7 +1188,7 @@ const Home = () => {
             </p>
           </div>
 
-           {/*<div className={styles.contactFormWrapper}>
+          {/*<div className={styles.contactFormWrapper}>
             <form className={styles.contactForm} onSubmit={handleSubmit}>
               {formSubmitted ? (
                 <div className={styles.formSuccess}>
@@ -1213,31 +1247,30 @@ const Home = () => {
               )}
             </form>*/}
 
-            <div className={styles.contactMethodsGrid}>
-              {contactMethods.map((contact, index) => (
-                <a
-                  key={index}
-                  href={contact.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.contactMethod}
-                >
-                  <div className={styles.contactMethodIcon}>
-                    <img
-                      src={contact.logo}
-                      alt={contact.title}
-                      width={32}
-                      height={32}
-                    />
-                  </div>
-                  <div className={styles.contactMethodInfo}>
-                    <h3>{contact.title}</h3>
-                    <p>{contact.desc}</p>
-                  </div>
-                </a>
-              ))}
-            </div>
-    
+          <div className={styles.contactMethodsGrid}>
+            {contactMethods.map((contact, index) => (
+              <a
+                key={index}
+                href={contact.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.contactMethod}
+              >
+                <div className={styles.contactMethodIcon}>
+                  <img
+                    src={contact.logo}
+                    alt={contact.title}
+                    width={32}
+                    height={32}
+                  />
+                </div>
+                <div className={styles.contactMethodInfo}>
+                  <h3>{contact.title}</h3>
+                  <p>{contact.desc}</p>
+                </div>
+              </a>
+            ))}
+          </div>
         </section>
       </main>
 
