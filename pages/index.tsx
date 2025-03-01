@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
@@ -69,8 +68,6 @@ const personalInfo = {
     },
   ],
 };
-
-
 
 // Blockchain skills with logos
 const blockchainSkillsWithLogos = [
@@ -180,13 +177,105 @@ const contactMethods = [
     link: "https://github.com/kulwindervilasra/",
     desc: "View my code",
   },
+ // {
+  //  title: "Portfolio",
+  //  logo: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+ //   link: "https://kulwindervilasra.github.io/portfolio/",
+ //   desc: "Visit my portfolio",
+//  },
+];
+
+const experiences = [
   {
-    title: "Portfolio",
-    logo: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
-    link: "https://kulwindervilasra.github.io/portfolio/",
-    desc: "Visit my portfolio",
+    title: "Freelance Developer",
+    company: "Self-employed",
+    location: "Remote",
+    period: "Jan 2025 - Present",
+    logo: "./images/freelance.png",
+    description: [
+      "Providing end-to-end development services for clients worldwide, specializing in blockchain and full-stack solutions.",
+      "Designing and developing custom web applications using modern JavaScript frameworks like React, Next.js, and Node.js.",
+      "Implementing smart contracts and decentralized applications (dApps) for various blockchain platforms.",
+      "Offering technical consultation and architectural guidance to startups and established businesses.",
+      "Managing projects independently from requirements gathering to deployment and maintenance.",
+    ],
+    technologies: [
+      "React.js",
+      "Next.js",
+      "Node.js",
+      "Ethereum",
+      "Solidity",
+      "MongoDB",
+      "GraphQL",
+      "AWS",
+      "Blockchain",
+      "Nest.js",
+    ],
+  },
+ {
+    title: "Full Stack Blockchain Developer & Team Lead",
+    company: "Antier Solutions Pvt Ltd",
+    location: "Mohali, Punjab",
+    period: "December 2020 - July 2024",
+    logo: "./images/antier.png",
+    description: [
+      "Led a team of 20+ developers to build and deploy blockchain-based solutions aligned with business and technical goals.",
+      "Architected and delivered decentralized applications (dApps) using Ethereum, Substrate, Cosmos SDK, and Tendermint frameworks.",
+      "Designed smart contracts that enable secure transactions for 5,000+ users per month.",
+      "Integrated advanced blockchain tools like IPFS, Hyperledger Fabric, and Polkadot for enhanced scalability.",
+      "Implemented best-of-security practices, reducing vulnerabilities by 40%.",
+      "Mentored junior developers, fostering a collaborative and innovative environment.",
+    ],
+    technologies: [
+      "Ethereum",
+      "Substrate",
+      "Cosmos SDK",
+      "Tendermint",
+      "Smart Contracts",
+      "React.js",
+      "Node.js",
+    ],
+  },
+  {
+    title: "Full Stack Software Developer",
+    company: "Innow8 Apps Pvt Ltd",
+    location: "Mohali, Punjab",
+    period: "February 2019 - December 2020",
+    logo: "./images/innow8.jpeg",
+    description: [
+      "Delivered 10+ blockchain-focused mobile and web projects, from requirements gathering to deployment.",
+      "Developed scalable web applications using React.js, Node.js and MongoDB, increasing user engagement by 30% and reducing server response time by 25%.",
+      "Optimized code quality by implementing unit tests and continuous integration practices, ensuring high maintainability.",
+    ],
+    technologies: [
+      "React.js",
+      "Node.js",
+      "MongoDB",
+      "Mobile Apps",
+      "React Native",
+      "Web3.js",
+    ],
+  },
+  {
+    title: "Software Engineer",
+    company: "eNest Technologies Pvt Ltd",
+    location: "Mohali, Punjab",
+    period: "January 2018 - September 2018",
+    logo: "./images/enest.svg",
+    description: [
+      "Prioritized and efficiently completed project tasks, contributing to the successful delivery of multiple projects.",
+      "Coordinated cross-departmental efforts, ensuring seamless execution and timely delivery of milestones.",
+    ],
+    technologies: [
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Node.js",
+      "Project Coordination",
+    ],
   },
 ];
+
 
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -207,7 +296,7 @@ const Home = () => {
     { name: "Smart Contracts", level: 95 },
     { name: "Tendermint", level: 85 },
     { name: "Polkadot", level: 88 },
-    { name: "IPFS", level: 90 }
+    { name: "IPFS", level: 90 },
   ];
 
   const frontendSkills = [
@@ -219,7 +308,7 @@ const Home = () => {
     { name: "Tailwind CSS", level: 92 },
     { name: "Material UI", level: 90 },
     { name: "React Native", level: 85 },
-    { name: "Vue.js", level: 80 }
+    { name: "Vue.js", level: 80 },
   ];
 
   const backendSkills = [
@@ -231,7 +320,7 @@ const Home = () => {
     { name: "GraphQL", level: 90 },
     { name: "REST APIs", level: 95 },
     { name: "WebSockets", level: 88 },
-    { name: "Microservices", level: 90 }
+    { name: "Microservices", level: 90 },
   ];
 
   const databaseSkills = [
@@ -242,7 +331,7 @@ const Home = () => {
     { name: "Firebase", level: 88 },
     { name: "Elasticsearch", level: 80 },
     { name: "DynamoDB", level: 82 },
-    { name: "Cassandra", level: 78 }
+    { name: "Cassandra", level: 78 },
   ];
 
   const devOpsSkills = [
@@ -253,7 +342,7 @@ const Home = () => {
     { name: "GitHub Actions", level: 92 },
     { name: "Jenkins", level: 85 },
     { name: "Terraform", level: 80 },
-    { name: "Nginx", level: 88 }
+    { name: "Nginx", level: 88 },
   ];
 
   const testingSkills = [
@@ -263,7 +352,7 @@ const Home = () => {
     { name: "Selenium", level: 82 },
     { name: "React Testing Library", level: 90 },
     { name: "Postman", level: 95 },
-    { name: "Pytest", level: 85 }
+    { name: "Pytest", level: 85 },
   ];
 
   const buildToolsSkills = [
@@ -273,7 +362,7 @@ const Home = () => {
     { name: "Rollup", level: 80 },
     { name: "npm/yarn", level: 95 },
     { name: "Gulp", level: 82 },
-    { name: "Grunt", level: 80 }
+    { name: "Grunt", level: 80 },
   ];
 
   const additionalSkills = [
@@ -284,14 +373,16 @@ const Home = () => {
     { name: "Performance Optimization", level: 90 },
     { name: "Security Best Practices", level: 88 },
     { name: "Project Management", level: 92 },
-    { name: "Technical Writing", level: 85 }
+    { name: "Technical Writing", level: 85 },
   ];
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
@@ -324,10 +415,7 @@ const Home = () => {
       <main className={styles.main}>
         {/* Hero Section */}
         <section className={styles.hero}>
-          <div
-            className={styles.heroContent}
-           
-          >
+          <div className={styles.heroContent}>
             <h1 className={styles.name}>{personalInfo.name}</h1>
             <h2 className={styles.title}>{personalInfo.occupation}</h2>
 
@@ -360,10 +448,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div
-            className={styles.heroGraphic}
-           
-          >
+          <div className={styles.heroGraphic}>
             <div className={styles.blockchainGraphic}>
               <div className={styles.blockNodes}>
                 {[...Array(5)].map((_, index) => (
@@ -392,53 +477,115 @@ const Home = () => {
           <div className={styles.projectsGrid}>
             <div className={styles.projectCard}>
               <div className={styles.projectImage}>
-                <img src="https://5ire.org/static/media/logo-dark.9a0588a2.svg" alt="5ireChain Network" />
+                <img
+                  src="https://5ire.org/static/media/logo-dark.9a0588a2.svg"
+                  alt="5ireChain Network"
+                />
               </div>
               <div className={styles.projectContent}>
                 <h3>5ireChain Network</h3>
-                <p>Created a Substrate-based NPOS blockchain with native token support and applications like IDEs and Wallet extensions.</p>
+                <p>
+                  Created a Substrate-based NPOS blockchain with native token
+                  support and applications like IDEs and Wallet extensions.
+                </p>
                 <div className={styles.technologies}>
-                  {["Substrate", "Polkadot", "Rust", "Web3.js", "React", "WASM"].map((tech, i) => (
-                    <span key={i} className={styles.techTag}>{tech}</span>
+                  {[
+                    "Substrate",
+                    "Polkadot",
+                    "Rust",
+                    "Web3.js",
+                    "React",
+                    "WASM",
+                  ].map((tech, i) => (
+                    <span key={i} className={styles.techTag}>
+                      {tech}
+                    </span>
                   ))}
                 </div>
-                <a href="https://5ire.org/" target="_blank" rel="noopener noreferrer" className={styles.viewButton}>
+                <a
+                  href="https://5ire.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.viewButton}
+                >
                   View Project
                 </a>
               </div>
             </div>
-            
+
             <div className={styles.projectCard}>
               <div className={styles.projectImage}>
-                <img src="https://www.zest.ai/wp-content/themes/zest/images/Zest--logo.png" alt="Zest AI" />
+                <img
+                  src="https://www.zest.ai/wp-content/themes/zest/images/Zest--logo.png"
+                  alt="Zest AI"
+                />
               </div>
               <div className={styles.projectContent}>
                 <h3>Zest AI</h3>
-                <p>Built backend systems for AI-driven credit underwriting using Node.js, integrating machine learning models to automate loan workflows.</p>
+                <p>
+                  Built backend systems for AI-driven credit underwriting using
+                  Node.js, integrating machine learning models to automate loan
+                  workflows.
+                </p>
                 <div className={styles.technologies}>
-                  {["Node.js", "Redis", "Microservices", "RabbitMQ", "Docker", "AI/ML"].map((tech, i) => (
-                    <span key={i} className={styles.techTag}>{tech}</span>
+                  {[
+                    "Node.js",
+                    "Redis",
+                    "Microservices",
+                    "RabbitMQ",
+                    "Docker",
+                    "AI/ML",
+                  ].map((tech, i) => (
+                    <span key={i} className={styles.techTag}>
+                      {tech}
+                    </span>
                   ))}
                 </div>
-                <a href="https://zest.ai/" target="_blank" rel="noopener noreferrer" className={styles.viewButton}>
+                <a
+                  href="https://zest.ai/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.viewButton}
+                >
                   View Project
                 </a>
               </div>
             </div>
-            
+
             <div className={styles.projectCard}>
               <div className={styles.projectImage}>
-                <img src="https://saitachain.com/saitachainlogo.png" alt="SaitaChain" />
+                <img
+                  src="https://saitachain.com/saitachainlogo.png"
+                  alt="SaitaChain"
+                />
               </div>
               <div className={styles.projectContent}>
                 <h3>SaitaChain</h3>
-                <p>Implemented decentralized apps for the scalable Layer 0 blockchain ecosystem, including Validator/Nominator apps and a DEX.</p>
+                <p>
+                  Implemented decentralized apps for the scalable Layer 0
+                  blockchain ecosystem, including Validator/Nominator apps and a
+                  DEX.
+                </p>
                 <div className={styles.technologies}>
-                  {["Layer 0", "Blockchain", "DApps", "DEX", "Solidity", "Cross-Chain"].map((tech, i) => (
-                    <span key={i} className={styles.techTag}>{tech}</span>
+                  {[
+                    "Layer 0",
+                    "Blockchain",
+                    "DApps",
+                    "DEX",
+                    "Solidity",
+                    "Cross-Chain",
+                  ].map((tech, i) => (
+                    <span key={i} className={styles.techTag}>
+                      {tech}
+                    </span>
                   ))}
                 </div>
-                <a href="https://saitachain.com/" target="_blank" rel="noopener noreferrer" className={styles.viewButton}>
+                <a
+                  href="https://saitachain.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.viewButton}
+                >
                   View Project
                 </a>
               </div>
@@ -454,27 +601,37 @@ const Home = () => {
           <div className={styles.sectionHeader}>
             <h2>Technical Expertise</h2>
             <p>
-              Comprehensive overview of my technical skills and proficiency levels
+              Comprehensive overview of my technical skills and proficiency
+              levels
             </p>
           </div>
 
           <div className={styles.sectionHeader} style={{ marginTop: "2rem" }}>
             <h3>Blockchain Technologies</h3>
-            <p>Specialized in cutting-edge blockchain technologies and frameworks</p>
+            <p>
+              Specialized in cutting-edge blockchain technologies and frameworks
+            </p>
           </div>
-          
-          <SkillsGrid 
-            skills={blockchainSkills} 
+
+          <SkillsGrid
+            skills={blockchainSkills}
             logoUrls={{
-              "Ethereum": "https://upload.wikimedia.org/wikipedia/commons/0/05/Ethereum_logo_2014.svg",
-              "Solidity": "https://upload.wikimedia.org/wikipedia/commons/9/98/Solidity_logo.svg",
-              "Web3.js": "https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/web-3-icon.png",
-              "Substrate": "https://cryptologos.cc/logos/polkadot-new-dot-logo.svg?v=040",
+              Ethereum:
+                "https://upload.wikimedia.org/wikipedia/commons/0/05/Ethereum_logo_2014.svg",
+              Solidity:
+                "https://upload.wikimedia.org/wikipedia/commons/9/98/Solidity_logo.svg",
+              "Web3.js":
+                "https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/web-3-icon.png",
+              Substrate:
+                "https://cryptologos.cc/logos/polkadot-new-dot-logo.svg?v=040",
               "Cosmos SDK": "https://v1.cosmos.network/img/favicon.ico",
-              "Smart Contracts": "https://img.icons8.com/cotton/64/blockchain-technology--v1.png",
-              "Tendermint": "https://cryptorank-images.s3.eu-central-1.amazonaws.com/coins/tendermint1614338427723.png",
-              "Polkadot": "https://cryptologos.cc/logos/polkadot-new-dot-logo.svg?v=022",
-              "IPFS": "https://upload.wikimedia.org/wikipedia/commons/1/18/Ipfs-logo-1024-ice-text.png"
+              "Smart Contracts":
+                "https://img.icons8.com/cotton/64/blockchain-technology--v1.png",
+              Tendermint:
+                "https://cryptorank-images.s3.eu-central-1.amazonaws.com/coins/tendermint1614338427723.png",
+              Polkadot:
+                "https://cryptologos.cc/logos/polkadot-new-dot-logo.svg?v=022",
+              IPFS: "https://upload.wikimedia.org/wikipedia/commons/1/18/Ipfs-logo-1024-ice-text.png",
             }}
           />
 
@@ -482,19 +639,27 @@ const Home = () => {
             <h3>Frontend Development</h3>
             <p>Building responsive and interactive user interfaces</p>
           </div>
-          
-          <SkillsGrid 
-            skills={frontendSkills} 
+
+          <SkillsGrid
+            skills={frontendSkills}
             logoUrls={{
-              "React.js": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
-              "Next.js": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg",
-              "TypeScript": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
-              "HTML/CSS": "https://cdn-icons-png.flaticon.com/512/1051/1051277.png",
-              "Redux": "https://d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg",
-              "Tailwind CSS": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
+              "React.js":
+                "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+              "Next.js":
+                "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg",
+              TypeScript:
+                "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
+              "HTML/CSS":
+                "https://cdn-icons-png.flaticon.com/512/1051/1051277.png",
+              Redux:
+                "https://d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg",
+              "Tailwind CSS":
+                "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
               "Material UI": "https://mui.com/static/logo.png",
-              "React Native": "https://d33wubrfki0l68.cloudfront.net/554c3b0e09cf167f0281fda839a5433f2040b349/ecfc9/img/header_logo.svg",
-              "Vue.js": "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg"
+              "React Native":
+                "https://d33wubrfki0l68.cloudfront.net/554c3b0e09cf167f0281fda839a5433f2040b349/ecfc9/img/header_logo.svg",
+              "Vue.js":
+                "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg",
             }}
           />
 
@@ -502,19 +667,26 @@ const Home = () => {
             <h3>Backend Development</h3>
             <p>Building scalable server-side applications and APIs</p>
           </div>
-          
-          <SkillsGrid 
-            skills={backendSkills} 
+
+          <SkillsGrid
+            skills={backendSkills}
             logoUrls={{
-              "Node.js": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg",
-              "Express.js": "https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png",
-              "NestJS": "https://docs.nestjs.com/assets/logo-small.svg",
-              "Python": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
-              "Django": "https://cdn.worldvectorlogo.com/logos/django.svg",
-              "GraphQL": "https://upload.wikimedia.org/wikipedia/commons/1/17/GraphQL_Logo.svg",
-              "REST APIs": "https://cdn-icons-png.flaticon.com/512/2165/2165004.png",
-              "WebSockets": "https://cdn-icons-png.flaticon.com/512/6119/6119533.png",
-              "Microservices": "https://cdn-icons-png.flaticon.com/512/7213/7213411.png"
+              "Node.js":
+                "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg",
+              "Express.js":
+                "https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png",
+              NestJS: "https://docs.nestjs.com/assets/logo-small.svg",
+              Python:
+                "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
+              Django: "https://cdn.worldvectorlogo.com/logos/django.svg",
+              GraphQL:
+                "https://upload.wikimedia.org/wikipedia/commons/1/17/GraphQL_Logo.svg",
+              "REST APIs":
+                "https://cdn-icons-png.flaticon.com/512/2165/2165004.png",
+              WebSockets:
+                "https://cdn-icons-png.flaticon.com/512/6119/6119533.png",
+              Microservices:
+                "https://cdn-icons-png.flaticon.com/512/7213/7213411.png",
             }}
           />
 
@@ -522,18 +694,26 @@ const Home = () => {
             <h3>Database Technologies</h3>
             <p>Working with various database systems for different use cases</p>
           </div>
-          
-          <SkillsGrid 
-            skills={databaseSkills} 
+
+          <SkillsGrid
+            skills={databaseSkills}
             logoUrls={{
-              "MongoDB": "https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg",
-              "PostgreSQL": "https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg",
-              "Redis": "https://upload.wikimedia.org/wikipedia/en/6/6b/Redis_Logo.svg",
-              "MySQL": "https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg",
-              "Firebase": "https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg",
-              "Elasticsearch": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Elasticsearch_logo.svg",
-              "DynamoDB": "https://upload.wikimedia.org/wikipedia/commons/f/fd/DynamoDB.png",
-              "Cassandra": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Cassandra_logo.svg"
+              MongoDB:
+                "https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg",
+              PostgreSQL:
+                "https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg",
+              Redis:
+                "https://upload.wikimedia.org/wikipedia/en/6/6b/Redis_Logo.svg",
+              MySQL:
+                "https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg",
+              Firebase:
+                "https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg",
+              Elasticsearch:
+                "https://upload.wikimedia.org/wikipedia/commons/f/f4/Elasticsearch_logo.svg",
+              DynamoDB:
+                "https://upload.wikimedia.org/wikipedia/commons/f/fd/DynamoDB.png",
+              Cassandra:
+                "https://upload.wikimedia.org/wikipedia/commons/5/5e/Cassandra_logo.svg",
             }}
           />
 
@@ -541,18 +721,25 @@ const Home = () => {
             <h3>DevOps & Cloud</h3>
             <p>Infrastructure, deployment, and cloud services expertise</p>
           </div>
-          
-          <SkillsGrid 
-            skills={devOpsSkills} 
+
+          <SkillsGrid
+            skills={devOpsSkills}
             logoUrls={{
-              "Docker": "https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png",
-              "Kubernetes": "https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg",
-              "AWS": "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
-              "CI/CD": "https://cdn-icons-png.flaticon.com/512/6133/6133886.png",
-              "GitHub Actions": "https://avatars.githubusercontent.com/u/44036562?s=280&v=4",
-              "Jenkins": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Jenkins_logo.svg",
-              "Terraform": "https://upload.wikimedia.org/wikipedia/commons/0/04/Terraform_Logo.svg",
-              "Nginx": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Nginx_logo.svg"
+              Docker:
+                "https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png",
+              Kubernetes:
+                "https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg",
+              AWS: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
+              "CI/CD":
+                "https://cdn-icons-png.flaticon.com/512/6133/6133886.png",
+              "GitHub Actions":
+                "https://avatars.githubusercontent.com/u/44036562?s=280&v=4",
+              Jenkins:
+                "https://upload.wikimedia.org/wikipedia/commons/e/e9/Jenkins_logo.svg",
+              Terraform:
+                "https://upload.wikimedia.org/wikipedia/commons/0/04/Terraform_Logo.svg",
+              Nginx:
+                "https://upload.wikimedia.org/wikipedia/commons/c/c5/Nginx_logo.svg",
             }}
           />
 
@@ -560,17 +747,22 @@ const Home = () => {
             <h3>Testing & Quality Assurance</h3>
             <p>Ensuring code quality and reliability through testing</p>
           </div>
-          
-          <SkillsGrid 
-            skills={testingSkills} 
+
+          <SkillsGrid
+            skills={testingSkills}
             logoUrls={{
-              "Jest": "https://cdn.freebiesupply.com/logos/large/2x/jest-logo-png-transparent.png",
-              "Mocha": "https://upload.wikimedia.org/wikipedia/commons/d/de/Mocha_logo.svg",
-              "Cypress": "https://asset.brandfetch.io/idIq_kF0rb/idv3zwmSiY.jpeg",
-              "Selenium": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Selenium_Logo.png",
-              "React Testing Library": "https://testing-library.com/img/octopus-128x128.png",
-              "Postman": "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg",
-              "Pytest": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Pytest_logo.svg"
+              Jest: "https://cdn.freebiesupply.com/logos/large/2x/jest-logo-png-transparent.png",
+              Mocha:
+                "https://upload.wikimedia.org/wikipedia/commons/d/de/Mocha_logo.svg",
+              Cypress: "https://asset.brandfetch.io/idIq_kF0rb/idv3zwmSiY.jpeg",
+              Selenium:
+                "https://upload.wikimedia.org/wikipedia/commons/d/d5/Selenium_Logo.png",
+              "React Testing Library":
+                "https://testing-library.com/img/octopus-128x128.png",
+              Postman:
+                "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg",
+              Pytest:
+                "https://upload.wikimedia.org/wikipedia/commons/b/ba/Pytest_logo.svg",
             }}
           />
 
@@ -578,17 +770,21 @@ const Home = () => {
             <h3>Build Tools</h3>
             <p>Tools for building and bundling applications</p>
           </div>
-          
-          <SkillsGrid 
-            skills={buildToolsSkills} 
+
+          <SkillsGrid
+            skills={buildToolsSkills}
             logoUrls={{
-              "Webpack": "https://raw.githubusercontent.com/webpack/media/master/logo/icon-square-big.png",
-              "Babel": "https://upload.wikimedia.org/wikipedia/commons/0/02/Babel_Logo.svg",
-              "Vite": "https://vitejs.dev/logo.svg",
-              "Rollup": "https://rollupjs.org/rollup-logo.svg",
-              "npm/yarn": "https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg",
-              "Gulp": "https://upload.wikimedia.org/wikipedia/commons/7/72/Gulp.js_Logo.svg",
-              "Grunt": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Grunt-logo.svg"
+              Webpack:
+                "https://raw.githubusercontent.com/webpack/media/master/logo/icon-square-big.png",
+              Babel:
+                "https://upload.wikimedia.org/wikipedia/commons/0/02/Babel_Logo.svg",
+              Vite: "https://vitejs.dev/logo.svg",
+              Rollup: "https://rollupjs.org/rollup-logo.svg",
+              "npm/yarn":
+                "https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg",
+              Gulp: "https://upload.wikimedia.org/wikipedia/commons/7/72/Gulp.js_Logo.svg",
+              Grunt:
+                "https://upload.wikimedia.org/wikipedia/commons/e/e4/Grunt-logo.svg",
             }}
           />
 
@@ -596,28 +792,33 @@ const Home = () => {
             <h3>Professional Skills</h3>
             <p>Additional expertise and soft skills</p>
           </div>
-          
-          <SkillsGrid 
-            skills={additionalSkills} 
+
+          <SkillsGrid
+            skills={additionalSkills}
             logoUrls={{
-              "Agile/Scrum": "https://cdn-icons-png.flaticon.com/512/2620/2620865.png",
-              "Git/GitHub": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg",
-              "Team Leadership": "https://cdn-icons-png.flaticon.com/512/1651/1651203.png",
-              "UI/UX Design": "https://cdn-icons-png.flaticon.com/512/5065/5065880.png",
-              "Performance Optimization": "https://cdn-icons-png.flaticon.com/512/1447/1447163.png",
-              "Security Best Practices": "https://cdn-icons-png.flaticon.com/512/2335/2335353.png",
-              "Project Management": "https://cdn-icons-png.flaticon.com/512/3281/3281307.png",
-              "Technical Writing": "https://cdn-icons-png.flaticon.com/512/4336/4336037.png"
+              "Agile/Scrum":
+                "https://cdn-icons-png.flaticon.com/512/2620/2620865.png",
+              "Git/GitHub":
+                "https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg",
+              "Team Leadership":
+                "https://cdn-icons-png.flaticon.com/512/1651/1651203.png",
+              "UI/UX Design":
+                "https://cdn-icons-png.flaticon.com/512/5065/5065880.png",
+              "Performance Optimization":
+                "https://cdn-icons-png.flaticon.com/512/1447/1447163.png",
+              "Security Best Practices":
+                "https://cdn-icons-png.flaticon.com/512/2335/2335353.png",
+              "Project Management":
+                "https://cdn-icons-png.flaticon.com/512/3281/3281307.png",
+              "Technical Writing":
+                "https://cdn-icons-png.flaticon.com/512/4336/4336037.png",
             }}
           />
         </section>
 
         {/* Experience Preview */}
         <section className={styles.experiencePreview}>
-          <div
-            className={styles.experienceHeader}
-           
-          >
+          <div className={styles.experienceHeader}>
             <h2>Professional Experience</h2>
             <p>
               7+ years of industry experience working with cutting-edge
@@ -629,12 +830,8 @@ const Home = () => {
           </div>
 
           <div className={styles.experienceCards}>
-            {personalInfo.experience.slice(0, 2).map((exp, index) => (
-              <div
-                key={index}
-                className={styles.experienceCard}
-               
-              >
+            {experiences.slice(0, 2).map((exp, index) => (
+              <div key={index} className={styles.experienceCard}>
                 <div className={styles.expLogoPlaceholder}>
                   {exp.logo ? (
                     <img
@@ -643,6 +840,12 @@ const Home = () => {
                           ? "/company-placeholder.png"
                           : exp.logo
                       }
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.onerror = null;
+                        target.src =
+                          "https://cdn-icons-png.flaticon.com/512/9068/9068883.png";
+                      }}
                       alt={exp.title}
                     />
                   ) : (
@@ -650,7 +853,7 @@ const Home = () => {
                   )}
                 </div>
                 <h3>{exp.title}</h3>
-                <p>{exp.desc}</p>
+                <p>{exp.description}</p>
               </div>
             ))}
           </div>
@@ -731,10 +934,7 @@ const Home = () => {
 
         {/* CTA Banner */}
         <section className={styles.ctaBanner}>
-          <div
-            className={styles.ctaContent}
-           
-          >
+          <div className={styles.ctaContent}>
             <h2>Ready to build your next blockchain project?</h2>
             <p>
               Let's collaborate to create innovative and secure blockchain
@@ -748,10 +948,7 @@ const Home = () => {
 
         {/* Contact Form Section */}
         <section id="contact" className={styles.contactFormSection}>
-          <div
-            className={styles.contactFormHeader}
-           
-          >
+          <div className={styles.contactFormHeader}>
             <h2>Let's Connect</h2>
             <p>
               Have a project in mind or want to explore collaboration
@@ -759,12 +956,8 @@ const Home = () => {
             </p>
           </div>
 
-          <div className={styles.contactFormWrapper}>
-            <form
-              className={styles.contactForm}
-              onSubmit={handleSubmit}
-             
-            >
+           {/*<div className={styles.contactFormWrapper}>
+            <form className={styles.contactForm} onSubmit={handleSubmit}>
               {formSubmitted ? (
                 <div className={styles.formSuccess}>
                   <div className={styles.successIcon}>✓</div>
@@ -820,12 +1013,9 @@ const Home = () => {
                   </button>
                 </>
               )}
-            </form>
+            </form>*/}
 
-            <div
-              className={styles.contactMethodsGrid}
-             
-            >
+            <div className={styles.contactMethodsGrid}>
               {contactMethods.map((contact, index) => (
                 <a
                   key={index}
@@ -849,7 +1039,7 @@ const Home = () => {
                 </a>
               ))}
             </div>
-          </div>
+    
         </section>
       </main>
 

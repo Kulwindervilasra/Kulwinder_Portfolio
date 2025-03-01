@@ -17,14 +17,14 @@ const Experience = () => {
       title: "Freelance Developer",
       company: "Self-employed",
       location: "Remote",
-      period: "August 2024 - Present",
-      logo: "./images/companies/freelance.png",
+      period: "Jan 2025 - Present",
+      logo: "./images/freelance.png",
       description: [
         "Providing end-to-end development services for clients worldwide, specializing in blockchain and full-stack solutions.",
         "Designing and developing custom web applications using modern JavaScript frameworks like React, Next.js, and Node.js.",
         "Implementing smart contracts and decentralized applications (dApps) for various blockchain platforms.",
         "Offering technical consultation and architectural guidance to startups and established businesses.",
-        "Managing projects independently from requirements gathering to deployment and maintenance."
+        "Managing projects independently from requirements gathering to deployment and maintenance.",
       ],
       technologies: [
         "React.js",
@@ -34,7 +34,9 @@ const Experience = () => {
         "Solidity",
         "MongoDB",
         "GraphQL",
-        "AWS"
+        "AWS",
+        "Blockchain",
+        "Nest.js",
       ],
     },
     {
@@ -263,7 +265,7 @@ const Experience = () => {
           </div>
         </motion.div>
 
-        <CertificateShowcase />
+        {/*<CertificateShowcase />*/}
       </main>
 
       <footer className={styles.footer}>
