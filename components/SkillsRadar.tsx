@@ -18,11 +18,16 @@ const SkillsRadar = ({ skills }: SkillsRadarProps) => {
   }, []);
 
   const getRadarCoordinates = (index: number, total: number, radius: number) => {
+    if (total === 0) return { x: 150, y: 150 }; // Center point if no skills
+    
+    // Calculate angle based on index and total number of points
     const angle = (Math.PI * 2 * index) / total;
-    return {
-      x: radius * Math.sin(angle) + 150, // Center X + offset
-      y: radius * Math.cos(angle) + 150, // Center Y + offset
-    };
+    
+    // Calculate coordinates with fixed precision to avoid React hydration warnings
+    const x = Number((radius * Math.sin(angle) + 150).toFixed(2)); // Center X + offset
+    const y = Number((radius * Math.cos(angle) + 150).toFixed(2)); // Center Y + offset
+    
+    return { x, y };
   };
 
   return (
@@ -74,16 +79,18 @@ const SkillsRadar = ({ skills }: SkillsRadarProps) => {
             })}
             
             {/* Radar polygon for skills */}
-            <polygon
-              points={skills.map((skill, index) => {
-                const radius = (skill.level / 100) * 120;
-                const coords = getRadarCoordinates(index, skills.length, radius);
-                return `${coords.x},${coords.y}`;
-              }).join(' ')}
-              fill="rgba(107, 111, 197, 0.5)"
-              stroke="rgb(107, 111, 197)"
-              strokeWidth="2"
-            />
+            {skills.length > 0 && (
+              <polygon
+                points={skills.map((skill, index) => {
+                  const radius = (skill.level / 100) * 120;
+                  const coords = getRadarCoordinates(index, skills.length, radius);
+                  return `${coords.x},${coords.y}`;
+                }).join(' ')}
+                fill="rgba(107, 111, 197, 0.5)"
+                stroke="rgb(107, 111, 197)"
+                strokeWidth="2"
+              />
+            )}
             
             {/* Skill points */}
             {skills.map((skill, index) => {
