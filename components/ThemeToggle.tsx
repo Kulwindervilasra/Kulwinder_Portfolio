@@ -6,10 +6,16 @@ const ThemeToggle = () => {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      setDarkMode(true);
-      document.documentElement.classList.add('dark-mode');
+    // Check if window is defined (client-side only)
+    if (typeof window !== 'undefined') {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      
+      // Use saved theme or system preference
+      if (savedTheme === 'dark' || (!savedTheme && prefersDarkMode)) {
+        setDarkMode(true);
+        document.documentElement.classList.add('dark-mode');
+      }
     }
   }, []);
 
