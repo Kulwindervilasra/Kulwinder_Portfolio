@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
@@ -17,35 +18,6 @@ const personalInfo = {
     {
       name: "WhatsApp",
       link: "https://wa.me/+919855657566",
-
-// Sample skills data
-const blockchainSkills = [
-  { name: "Ethereum", level: 90 },
-  { name: "Solidity", level: 85 },
-  { name: "Web3.js", level: 80 },
-  { name: "Substrate", level: 75 },
-  { name: "Cosmos SDK", level: 70 },
-  { name: "Smart Contracts", level: 85 }
-];
-
-const developerSkills = [
-  { name: "JavaScript", level: 90 },
-  { name: "TypeScript", level: 85 },
-  { name: "React.js", level: 80 },
-  { name: "Node.js", level: 85 },
-  { name: "MongoDB", level: 75 },
-  { name: "GraphQL", level: 70 }
-];
-
-const additionalSkills = [
-  { name: "CI/CD", level: 75 },
-  { name: "Docker", level: 80 },
-  { name: "AWS", level: 70 },
-  { name: "Testing", level: 75 },
-  { name: "Agile", level: 85 },
-  { name: "UI/UX", level: 65 }
-];
-
     },
     {
       name: "Telegram",
@@ -99,7 +71,36 @@ const additionalSkills = [
   ],
 };
 
+// Define skills data outside of personalInfo object
 const blockchainSkills = [
+  { name: "Ethereum", level: 90 },
+  { name: "Solidity", level: 85 },
+  { name: "Web3.js", level: 80 },
+  { name: "Substrate", level: 75 },
+  { name: "Cosmos SDK", level: 70 },
+  { name: "Smart Contracts", level: 85 }
+];
+
+const developerSkills = [
+  { name: "JavaScript", level: 90 },
+  { name: "TypeScript", level: 85 },
+  { name: "React.js", level: 80 },
+  { name: "Node.js", level: 85 },
+  { name: "MongoDB", level: 75 },
+  { name: "GraphQL", level: 70 }
+];
+
+const additionalSkills = [
+  { name: "CI/CD", level: 75 },
+  { name: "Docker", level: 80 },
+  { name: "AWS", level: 70 },
+  { name: "Testing", level: 75 },
+  { name: "Agile", level: 85 },
+  { name: "UI/UX", level: 65 }
+];
+
+// Blockchain skills with logos
+const blockchainSkillsWithLogos = [
   {
     title: "Ethereum",
     logo: "https://upload.wikimedia.org/wikipedia/commons/0/05/Ethereum_logo_2014.svg",
@@ -126,7 +127,7 @@ const blockchainSkills = [
   },
 ];
 
-const developerSkills = [
+const developerSkillsWithLogos = [
   {
     title: "React.js",
     logo: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
@@ -154,7 +155,7 @@ const developerSkills = [
 ];
 
 // Additional skills with logos
-const additionalSkills = [
+const additionalSkillsWithLogos = [
   {
     title: "GraphQL",
     logo: "https://upload.wikimedia.org/wikipedia/commons/1/17/GraphQL_Logo.svg",
