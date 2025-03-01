@@ -295,7 +295,38 @@ const Home = () => {
         </section>
 
         {/* Project Carousel */}
-        <ProjectCarousel />
+        <section className={styles.section}>
+          <div className={styles.sectionHeader}>
+            <h2>Featured Projects</h2>
+            <p>A selection of my recent blockchain and web development work</p>
+          </div>
+          <ProjectCarousel projects={[
+            {
+              id: 1,
+              title: "5ireChain Network",
+              description: "Created a Substrate-based NPOS blockchain with native token support and applications like IDEs and Wallet extensions.",
+              image: "https://5ire.org/static/media/logo-dark.9a0588a2.svg",
+              link: "https://5ire.org/",
+              technologies: ["Substrate", "Polkadot", "Rust", "Web3.js", "React", "WASM"]
+            },
+            {
+              id: 2,
+              title: "Zest AI",
+              description: "Built backend systems for AI-driven credit underwriting using Node.js, integrating machine learning models to automate loan workflows.",
+              image: "https://www.zest.ai/wp-content/themes/zest/images/Zest--logo.png",
+              link: "https://zest.ai/",
+              technologies: ["Node.js", "Redis", "Microservices", "RabbitMQ", "Docker", "AI/ML"]
+            },
+            {
+              id: 3,
+              title: "SaitaChain",
+              description: "Implemented decentralized apps for the scalable Layer 0 blockchain ecosystem, including Validator/Nominator apps and a DEX.",
+              image: "https://saitachain.com/saitachainlogo.png",
+              link: "https://saitachain.com/",
+              technologies: ["Layer 0", "Blockchain", "DApps", "DEX", "Solidity", "Cross-Chain"]
+            }
+          ]} />
+        </section>
 
         {/* Service Section */}
         <ServiceSection />
