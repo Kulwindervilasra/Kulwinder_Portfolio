@@ -231,11 +231,9 @@ const Home = () => {
       <main className={styles.main}>
         {/* Hero Section */}
         <section className={styles.hero}>
-          <motion.div
+          <div
             className={styles.heroContent}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
-            transition={{ duration: 0.8 }}
+           
           >
             <h1 className={styles.name}>{personalInfo.name}</h1>
             <h2 className={styles.title}>{personalInfo.occupation}</h2>
@@ -267,13 +265,11 @@ const Home = () => {
                 </a>
               ))}
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
+          <div
             className={styles.heroGraphic}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: isVisible ? 1 : 0, scale: isVisible ? 1 : 0.8 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+           
           >
             <div className={styles.blockchainGraphic}>
               <div className={styles.blockNodes}>
@@ -291,7 +287,7 @@ const Home = () => {
                 ))}
               </div>
             </div>
-          </motion.div>
+          </div>
         </section>
 
         {/* Project Carousel */}
@@ -361,12 +357,9 @@ const Home = () => {
 
         {/* Experience Preview */}
         <section className={styles.experiencePreview}>
-          <motion.div
+          <div
             className={styles.experienceHeader}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+           
           >
             <h2>Professional Experience</h2>
             <p>
@@ -376,17 +369,14 @@ const Home = () => {
             <a href="/experience" className={styles.viewMoreButton}>
               View Full Experience
             </a>
-          </motion.div>
+          </div>
 
           <div className={styles.experienceCards}>
             {personalInfo.experience.slice(0, 2).map((exp, index) => (
-              <motion.div
+              <div
                 key={index}
                 className={styles.experienceCard}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
+               
               >
                 <div className={styles.expLogoPlaceholder}>
                   {exp.logo ? (
@@ -404,7 +394,7 @@ const Home = () => {
                 </div>
                 <h3>{exp.title}</h3>
                 <p>{exp.desc}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </section>
@@ -484,12 +474,9 @@ const Home = () => {
 
         {/* CTA Banner */}
         <section className={styles.ctaBanner}>
-          <motion.div
+          <div
             className={styles.ctaContent}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+           
           >
             <h2>Ready to build your next blockchain project?</h2>
             <p>
@@ -499,33 +486,27 @@ const Home = () => {
             <a href="#contact" className={styles.ctaButton}>
               Get in Touch
             </a>
-          </motion.div>
+          </div>
         </section>
 
         {/* Contact Form Section */}
         <section id="contact" className={styles.contactFormSection}>
-          <motion.div
+          <div
             className={styles.contactFormHeader}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+           
           >
             <h2>Let's Connect</h2>
             <p>
               Have a project in mind or want to explore collaboration
               opportunities? Send me a message!
             </p>
-          </motion.div>
+          </div>
 
           <div className={styles.contactFormWrapper}>
-            <motion.form
+            <form
               className={styles.contactForm}
               onSubmit={handleSubmit}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+             
             >
               {formSubmitted ? (
                 <div className={styles.formSuccess}>
@@ -582,14 +563,11 @@ const Home = () => {
                   </button>
                 </>
               )}
-            </motion.form>
+            </form>
 
-            <motion.div
+            <div
               className={styles.contactMethodsGrid}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+             
             >
               {contactMethods.map((contact, index) => (
                 <a
@@ -613,7 +591,7 @@ const Home = () => {
                   </div>
                 </a>
               ))}
-            </motion.div>
+            </div>
           </div>
         </section>
       </main>

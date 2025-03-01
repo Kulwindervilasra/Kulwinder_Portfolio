@@ -1,8 +1,8 @@
 .container {
   padding: 0;
   min-height: 100vh;
-  background: #0f1121;
-  color: #f1f1f3;
+  background: var(--portfolio-bg);
+  color: var(--portfolio-text);
   font-family: 'Poppins', sans-serif;
 }
 
@@ -36,7 +36,7 @@
   font-size: 4rem;
   font-weight: 700;
   margin: 0;
-  background: linear-gradient(to right, #f1f1f3, #6b6fc5);
+  background: linear-gradient(to right, #f1f1f3, #8286e8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.2;
@@ -58,7 +58,7 @@
 }
 
 .primaryButton {
-  background: linear-gradient(45deg, #525cdd, #9c3fe4);
+  background: var(--portfolio-accent);
   color: white;
   padding: 12px 30px;
   border-radius: 30px;

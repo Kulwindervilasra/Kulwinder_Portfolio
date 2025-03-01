@@ -4,19 +4,19 @@
   top: 0;
   left: 0;
   width: 100%;
+  padding: 1.5rem 4rem;
   z-index: 1000;
   background: rgba(15, 17, 33, 0.8);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .headerContent {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  justify-content: space-between;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 1rem 2rem;
 }
 
 .logo {
@@ -24,22 +24,24 @@
   font-weight: 700;
   color: #f1f1f3;
   text-decoration: none;
-  background: linear-gradient(to right, #f1f1f3, #6b6fc5);
+  background: linear-gradient(45deg, #525cdd, #9c3fe4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .nav {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
+  align-items: center;
 }
 
 .nav a {
   color: #a9a9c8;
   text-decoration: none;
+  font-size: 1rem;
   font-weight: 500;
-  transition: color 0.3s ease;
   position: relative;
+  transition: color 0.3s ease;
 }
 
 .nav a:hover {
@@ -50,41 +52,45 @@
   color: #f1f1f3;
 }
 
-.nav a.active:after {
+.nav a.active::after {
   content: '';
   position: absolute;
-  bottom: -5px;
+  bottom: -8px;
   left: 0;
   width: 100%;
   height: 2px;
   background: linear-gradient(to right, #525cdd, #9c3fe4);
 }
 
-@media (max-width: 768px) {
-  .headerContent {
-    padding: 1rem;
-  }
-  
-  .nav {
-    gap: 1rem;
-  }
+.mobileMenuToggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #f1f1f3;
+  cursor: pointer;
+  padding: 0.5rem;
 }
 
 @media (max-width: 768px) {
+  .header {
+    padding: 1rem 2rem;
+  }
+  
   .nav {
     position: fixed;
-    top: 60px;
+    top: 70px;
     left: 0;
     width: 100%;
-    background: rgba(15, 17, 33, 0.95);
+    background: rgba(15, 17, 33, 0.98);
     flex-direction: column;
-    padding: 1rem;
-    gap: 1rem;
-    transform: translateY(-100%);
+    padding: 2rem;
+    gap: 2rem;
+    transform: translateY(-150%);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease-in-out;
     z-index: 999;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
   
   .nav.active {
@@ -95,16 +101,11 @@
   
   .mobileMenuToggle {
     display: block;
-    background: none;
-    border: none;
-    color: #f1f1f3;
-    cursor: pointer;
-    padding: 0.5rem;
   }
 }
 
-@media (min-width: 769px) {
-  .mobileMenuToggle {
-    display: none;
+@media (max-width: 480px) {
+  .header {
+    padding: 1rem;
   }
 }

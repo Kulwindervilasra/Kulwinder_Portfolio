@@ -45,10 +45,12 @@ const NavBar = () => {
           </Link>
           <Link
             href="/#contact"
-            className={router.pathname === "/#contact" ? styles.active : ""}
+            className={router.asPath === "/#contact" ? styles.active : ""}
             onClick={(e) => {
-              e.preventDefault();
-              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+              if (router.pathname === "/") {
+                e.preventDefault();
+                document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+              }
             }}
           >
             Contact
