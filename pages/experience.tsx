@@ -17,8 +17,8 @@ const Experience = () => {
       title: "Senior Software Engineer",
       company: "Alphanet Corp",
       location: "Mohali, Punjab",
-      period: "September 2024 - Present",
-      logo: "https://cdn-icons-png.flaticon.com/512/9173/9173061.png",
+      period: "September 2024 - Jan 2025",
+      logo: "./images/alpha_net_logo.jpeg",
       description: [
         "Developed and deployed microservices for Zest AI applications, scaling to handle 50,000+ credit score requests daily using Node.js and Redis.",
         "Implemented Redis-based caching strategy, reducing server costs by 30% and improving API response time by 25%.",
@@ -39,7 +39,7 @@ const Experience = () => {
       company: "Antier Solutions Pvt Ltd",
       location: "Mohali, Punjab",
       period: "December 2020 - July 2024",
-      logo: "https://cdn-icons-png.flaticon.com/512/6001/6001527.png",
+      logo: "./images/antier.png",
       description: [
         "Led a team of 20+ developers to build and deploy blockchain-based solutions aligned with business and technical goals.",
         "Architected and delivered decentralized applications (dApps) using Ethereum, Substrate, Cosmos SDK, and Tendermint frameworks.",
@@ -63,7 +63,7 @@ const Experience = () => {
       company: "Innow8 Apps Pvt Ltd",
       location: "Mohali, Punjab",
       period: "February 2019 - December 2020",
-      logo: "https://cdn-icons-png.flaticon.com/512/8748/8748434.png",
+      logo: "./images/innow8.jpeg",
       description: [
         "Delivered 10+ blockchain-focused mobile and web projects, from requirements gathering to deployment.",
         "Developed scalable web applications using React.js, Node.js and MongoDB, increasing user engagement by 30% and reducing server response time by 25%.",
@@ -83,7 +83,7 @@ const Experience = () => {
       company: "eNest Technologies Pvt Ltd",
       location: "Mohali, Punjab",
       period: "January 2018 - September 2018",
-      logo: "https://cdn-icons-png.flaticon.com/512/2721/2721304.png",
+      logo: "./images/enest.svg",
       description: [
         "Prioritized and efficiently completed project tasks, contributing to the successful delivery of multiple projects.",
         "Coordinated cross-departmental efforts, ensuring seamless execution and timely delivery of milestones.",
@@ -140,13 +140,23 @@ const Experience = () => {
             My career journey and professional growth in blockchain development
             and full-stack engineering.
           </p>
-          <a 
-            href="https://drive.google.com/file/d/1NrxK5tlN9CtiLf3NNe75mOGrl4_0RlXT/view" 
+          <a
+            href="https://drive.google.com/file/d/1NrxK5tlN9CtiLf3NNe75mOGrl4_0RlXT/view"
             target="_blank"
-            rel="noopener noreferrer" 
+            rel="noopener noreferrer"
             className={styles.downloadResumeBtn}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
               <polyline points="7 10 12 15 17 10"></polyline>
               <line x1="12" y1="15" x2="12" y2="3"></line>
@@ -168,13 +178,14 @@ const Experience = () => {
               <div className={styles.timelineContent}>
                 <div className={styles.timelineHeader}>
                   <div className={styles.companyLogo}>
-                    <img 
-                      src={exp.logo} 
+                    <img
+                      src={exp.logo}
                       alt={exp.company}
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.onerror = null;
-                        target.src = "https://cdn-icons-png.flaticon.com/512/9068/9068883.png";
+                        target.src =
+                          "https://cdn-icons-png.flaticon.com/512/9068/9068883.png";
                       }}
                     />
                   </div>
