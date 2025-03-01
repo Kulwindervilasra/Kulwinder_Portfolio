@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from "react";
 import Head from "next/head";
-import { useRouter } from "next/router";
 import styles from "../styles/Projects.module.css";
 import { motion } from "framer-motion";
 
