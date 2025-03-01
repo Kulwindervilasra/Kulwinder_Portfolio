@@ -949,7 +949,7 @@ const Home = () => {
             }}
           />
 
-          <div className={styles.sectionHeader} style={{ marginTop: "2rem" }}>
+          {/** <div className={styles.sectionHeader} style={{ marginTop: "2rem" }}>
             <h3>AI & Machine Learning</h3>
             <p>Integration and implementation of AI technologies</p>
           </div>
@@ -973,7 +973,7 @@ const Home = () => {
               "AI Ethics": "https://cdn-icons-png.flaticon.com/512/2090/2090688.png",
               "AI Deployment": "https://cdn-icons-png.flaticon.com/512/7078/7078279.png",
             }}
-          />
+          />*/}
 
           <div className={styles.sectionHeader} style={{ marginTop: "2rem" }}>
             <h3>Professional Skills</h3>

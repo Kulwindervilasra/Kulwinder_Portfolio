@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -37,19 +36,21 @@ const NavBar = () => {
           >
             Projects
           </Link>
-          <Link
+          {/*<Link
             href="/blog"
             className={router.pathname === "/blog" ? styles.active : ""}
           >
             Blog
-          </Link>
+          </Link>*/}
           <Link
             href="/#contact"
             className={router.asPath === "/#contact" ? styles.active : ""}
             onClick={(e) => {
               if (router.pathname === "/") {
                 e.preventDefault();
-                document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" });
               }
             }}
           >
